@@ -1,6 +1,7 @@
 #!/usr/bin/bash
 
-cp /home/jhxnnat/.config/lvim/config.lua ./lvim/config.lua
+cp $HOME/.config/lvim/config.lua ./lvim/config.lua
 
-cp /home/jhxnnat/.config/VSCodium/User/settings.json ./vscode/settings.json
-cp /home/jhxnnat/.config/VSCodium/User/keybindings.json ./vscode/keybindings.json
+cp $HOME/.config/VSCodium/User/settings.json ./vscode/settings.json
+cp $HOME/.config/VSCodium/User/keybindings.json ./vscode/keybindings.json
+cp -r $HOME/.config/nvim/ ./nvim/

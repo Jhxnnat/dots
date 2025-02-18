@@ -14,14 +14,14 @@ lvim.plugins = {
             -- vim.g.gruvbox_material_background = "hard"
             vim.g.gruvbox_material_disable_italic_comment = 1
             vim.g.gruvbox_material_statusline_style = "original"
-            vim.cmd.colorscheme('gruvbox-material')
+            -- vim.cmd.colorscheme('gruvbox-material')
         end
     },
     {
         'morhetz/gruvbox',
         config = function()
             -- vim.gruvbox_termcolors = 16
-            vim.cmd.colorscheme("gruvbox")
+            -- vim.cmd.colorscheme("gruvbox")
         end
     },
     {
@@ -57,15 +57,30 @@ lvim.plugins = {
         end
     },
     { 'datsfilipe/vesper.nvim' },
+    { 'slugbyte/lackluster.nvim' }
 }
+
+local lackluster = require("lackluster")
+lackluster.setup({
+    tweak_syntax = {
+        comment = lackluster.color.orange,
+        string = lackluster.color.green,
+        keyword = lackluster.color.yellow,
+    },
+    tweak_background = {
+        normal = 'none',
+        telescope = 'none',
+        popup = 'default',
+    },
+})
 
 -- lvim.colorscheme = "ashen"
 --lvim.colorscheme = "kanagawa"
 -- lvim.colorscheme = "gruvbox-material"
 -- lvim.colorscheme = "gruvbox"
 -- lvim.colorscheme = "gruber-darker"
-lvim.colorscheme = "zenburned"
 -- lvim.colorscheme = "vesper"
+lvim.colorscheme = "lackluster"
 
 vim.opt.shiftwidth = 4
 vim.opt.tabstop = 4
@@ -106,3 +121,4 @@ lvim.keys.normal_mode["-"] = ":split<CR>"
 require('colorizer').setup()
 
 lvim.builtin.bufferline.active = false
+
