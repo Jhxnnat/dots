@@ -1,0 +1,87 @@
+ @import url('../../.cache/wal/colors-waybar.css');
+
+* {
+    font-family: 'Iosevka Nerd Font', FontAwesome, Roboto, Helvetica, Arial, sans-serif;
+    font-size: 14px;
+}
+
+window#waybar {
+    all: unset;
+	background: alpha(@background, .5);
+}
+
+window#waybar > box {
+    margin-bottom: 1px; 
+    margin-top: 1px; 
+	margin-left: 2px;
+	/*background: linear-gradient(90deg, alpha(@background, .4) 5%, alpha(@background, .7) 100%); */
+	box-shadow: rgba(0, 0, 0, 1) 2px 2px 2px 2px;
+	border-radius: 0;
+	border: 0.5px solid @color11;
+}
+
+window#waybar.hidden {
+    opacity: 0.2;
+}
+
+#workspaces,
+#waycava, 
+#media,
+#battery,
+#clock,
+#tray,
+#pulseaudio,
+#backlight,
+#cpu,
+#temperature,
+#up,
+#down,
+#memory {
+	color: @foreground;
+}
+
+button {
+    border: none;
+}
+button:hover {
+    background: inherit;
+}
+
+#workspaces button {
+    padding: 0 0px;
+	color: @foreground;
+	border-radius: 0;
+}
+#workspaces button.active {
+	/*background-color: @color11;*/
+	background: linear-gradient(90deg, @color3 5%, @color11 100%); 
+	color: @background;
+}
+
+#taskbar button {
+    padding: 0 4px;
+}
+#taskbar button.active {
+    border-top: 2px dotted @color11;
+    border-bottom: 2px dotted @color11;
+}
+
+#battery {
+	border-radius: 0;
+}
+#battery.charging {
+	color: @background;
+	background: linear-gradient(90deg, @color3 5%, @color11 100%);
+}
+#battery.full {
+	color: @background;
+	background: linear-gradient(90deg, @color3 5%, @color11 100%);
+}
+#battery.discharging.warning {
+	color: @foreground;
+	background: linear-gradient(90deg, #b58907 5%, #cea62f 100%); 
+}
+#battery.discharging.critical {
+	color: @foreground;
+	background: linear-gradient(90deg, #820608 5%, #8e1517 100%); 
+}

@@ -1,0 +1,37 @@
+#!/bin/bash
+ 
+# return volume percentage
+# and rely on volume script to adjust volume on all sinks
+ 
+# normally stored in /usr/share/i3blocks
+ 
+case $BLOCK_BUTTON in
+    1) i3 "[instance=pavucontrol] scratchpad show; move position center" >> /dev/null ;; # show pavucontrol
+    # 2) ;; # middle click
+    3) volume mute ;; # mute volume
+    4) volume +5% ;; # scroll up, increase
+    5) volume -5% ;; # scroll down, decrease
+esac
+ 
+INFO=$(pactl list sinks)
+MUTE_STATUS=$(echo "$INFO" | grep "Mute" | head -1 | grep "yes") # nonempty string if mute
+VOLUME=$(echo "$INFO" | grep 'Volume' | head -1 | grep -oh '...%' | head -1 | xargs) # xargs trims whitespace
+VOLUME=${VOLUME:0:-1}
+ICON=" "
+
+size=${#VOLUME}
+ICON=""
+if (( "$VOLUME" > "65")); then
+    ICON=" "
+elif (( "$VOLUME" > "45" )); then
+    ICON=" "
+elif (( "$VOLUME" > "25" )); then
+    ICON=" "
+fi
+ 
+if [[ -z "$MUTE_STATUS" ]]; then # if empty string --> not muted
+    echo "$ICON $VOLUME%"
+    exit 0
+fi
+ 
+echo "  0%"

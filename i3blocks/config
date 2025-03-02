@@ -1,0 +1,47 @@
+# For the benefit of emacs users: -*- shell-script -*-
+#
+#  _ _____ _     _            _
+# (_)___ /| |__ | | ___   ___| | _____
+# | | |_ \| '_ \| |/ _ \ / __| |/ / __|
+# | |___) | |_) | | (_) | (__|   <\__ \
+# |_|____/|_.__/|_|\___/ \___|_|\_\___/
+
+align=center
+color=#f8f8f2
+separator_block_width=15
+markup=pango
+
+# [i3-focusedwindow]
+# command=~/.config/i3blocks/i3-focusedwindow
+# label=[]=
+# interval=persist
+# color=#EBDBB2
+
+# [currentsong]
+# command=~/.config/i3blocks/currentsong
+# interval=5
+# color=#B8BB26
+
+[volume]
+command=~/.config/i3blocks/volume
+signal=12
+interval=once
+# color=#8EC07C
+#min_width=VOL MUTE
+
+[date]
+#command=LC_ALL="zh_CN.UTF-8" date '+%Y  %B %d %A。' | awk '{ printf "%s<span color=\"#ff5555\">%s%s</span>%s<span color=\"#ff5555\">%s %s</span>\n", $1, $2, $3, $4, $5, $6 }'
+command=~/.config/i3blocks/date
+interval=60
+# color=#D3869B
+
+[brightness]
+command=~/.config/i3blocks/brightness
+signal=13
+interval=once
+# color=#FABD2F
+
+[battery]
+command=/home/jhxnnat/.config/i3blocks/battery
+interval=30
+

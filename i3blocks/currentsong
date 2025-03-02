@@ -1,0 +1,27 @@
+#!/bin/bash
+
+META=" "
+STATUS="󰝛 "
+SONG=$(playerctl -s metadata title)
+
+if [ $? -eq 0 ]
+then
+    ARTIST=$(playerctl -s metadata artist)
+    MSG="$SONG - $ARTIST"
+    META="${MSG}"
+    STATUS=" "
+    # status=$(playerctl status | grep "Stopped") # for some reason playerctl does not work with browser
+    # if [ $? -eq 0 ]; then
+    #     STATUS=""
+    # fi
+else
+    # to get rid of album directory path
+    MPD=$(pgrep -l mpd)
+    if [ $? -eq 0 ]; then
+        META=$(mpc current -f %file% | rev | cut -d'/' -f1 | rev)
+        #META=$(mpc -q -f "[[%title% - ]%artist%]|[%file%]")
+        STATUS=" "
+    fi
+fi
+
+echo "${META}"

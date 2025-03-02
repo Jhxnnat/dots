@@ -1,0 +1,4 @@
+#!/bin/bash
+#echo date '+%R, %A %d de %B'
+echo hola
+

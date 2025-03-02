@@ -1,0 +1,5 @@
+set recolor_darkcolor "{background}"
+set recolor_lightcolor "\{foreground}"
+set default-bg "\{background}"
+set default-fg "\{foreground}"
+
