@@ -16,6 +16,9 @@
     min_icon_size = 16
     max_icon_size = 32
     format = "<b>%s</b>\n%b"
+	corner_radius = 6
+	progress_bar_corner_radius = 4
+    icon_corner_radius = 6
 
 [urgency_low]
     frame_color = "{color11}"

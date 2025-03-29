@@ -27,24 +27,33 @@ Plug 'hrsh7th/cmp-path'
 Plug 'hrsh7th/cmp-cmdline'
 Plug 'hrsh7th/nvim-cmp'
 
+Plug 'ej-shafran/compile-mode.nvim'
+
 vim.call('plug#end')
 
+require("config.theme")
 require("config.opt")
 require("config.keybinds")
 
 require("plugin.cmp")
-require("plugin.lualine")
+-- require("plugin.lualine")
+require("plugin.miniline")
 require("plugin.nvimtree")
+require("plugin.oil")
 
-require("oil").setup()
 require("nvim-autopairs").setup {}
 require'alpha'.setup(require'alpha.themes.startify'.config)
 require('cmp').setup({ name = 'buffer' })
 
 vim.cmd.colorscheme("gruber-darker")
---vim.cmd.colorscheme("lackluster")
 
--- TODO: move lines up-down 
+-- TODO: move lines up-down (insert mode)
 -- move selections up-down
--- autocmd stuff
--- resize windows ctrl+arrows
+
+-- Neovide font resize
+if vim.g.neovide then
+    vim.keymap.set({ "n", "v" }, "<C-+>", ":lua vim.g.neovide_scale_factor = vim.g.neovide_scale_factor + 0.1<CR>")
+    vim.keymap.set({ "n", "v" }, "<C-->", ":lua vim.g.neovide_scale_factor = vim.g.neovide_scale_factor - 0.1<CR>")
+    vim.keymap.set({ "n" , "v" }, "<C-0>", ":lua vim.g.neovide_scale_factor = 1<CR>")
+end
+

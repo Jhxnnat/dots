@@ -3,11 +3,15 @@
 * {
     font-family: 'Iosevka Nerd Font', FontAwesome, Roboto, Helvetica, Arial, sans-serif;
     font-size: 14px;
+	font-weight: bold;
 }
 
 window#waybar {
     all: unset;
-	background: alpha(@background, .5);
+	background: alpha(@background, .8);
+	border-radius: 4px;
+	border-top: 0.5px solid alpha(@foreground, .6);
+	border-left: 0.5px solid alpha(@foreground, .6);
 }
 
 window#waybar > box {
@@ -15,9 +19,24 @@ window#waybar > box {
     margin-top: 1px; 
 	margin-left: 2px;
 	/*background: linear-gradient(90deg, alpha(@background, .4) 5%, alpha(@background, .7) 100%); */
-	box-shadow: rgba(0, 0, 0, 1) 2px 2px 2px 2px;
-	border-radius: 0;
-	border: 0.5px solid @color11;
+	/*box-shadow: rgba(0, 0, 0, 1) 2px 2px 2px 2px;*/
+	/*border-left: 0.5px solid @color11;*/
+}
+
+menu,
+tooltip {
+  border-radius: 6px;
+  padding: 2px;
+  border: 0.5px solid @foreground;
+  background: alpha(@background, 0.8);
+
+  color: lighter(@active);
+}
+
+menu label,
+tooltip label {
+  font-size: 14px;
+  color: @foreground;
 }
 
 window#waybar.hidden {
@@ -50,12 +69,10 @@ button:hover {
 #workspaces button {
     padding: 0 0px;
 	color: @foreground;
-	border-radius: 0;
+	border-radius: 4px;
 }
 #workspaces button.active {
-	/*background-color: @color11;*/
-	background: linear-gradient(90deg, @color3 5%, @color11 100%); 
-	color: @background;
+	border-bottom: 1px solid @color11;
 }
 
 #taskbar button {
@@ -67,16 +84,18 @@ button:hover {
 }
 
 #battery {
-	border-radius: 0;
+	border-radius: 4px;
+	border-bottom: 1px solid @color11;
+	color: @foreground;
 }
 #battery.charging {
+	border: 0px;
 	color: @background;
-	background: linear-gradient(90deg, @color3 5%, @color11 100%);
+	background-color: @foreground;
 }
-#battery.full {
-	color: @background;
-	background: linear-gradient(90deg, @color3 5%, @color11 100%);
-}
+/*#battery.full {*/
+/*}*/
+
 #battery.discharging.warning {
 	color: @foreground;
 	background: linear-gradient(90deg, #b58907 5%, #cea62f 100%); 
@@ -85,3 +104,4 @@ button:hover {
 	color: @foreground;
 	background: linear-gradient(90deg, #820608 5%, #8e1517 100%); 
 }
+

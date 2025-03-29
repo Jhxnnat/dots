@@ -23,7 +23,7 @@ include ~/.cache/wal/colors-kitty.conf
 #: <https://sw.kovidgoyal.net/kitty/kittens/choose-fonts/#font-spec-
 #: syntax>.
 
-font_size 14.0
+font_size 12.0
 
 #: Font size (in pts).
 
@@ -753,7 +753,7 @@ cursor_trail_start_threshold 4
 #: refresh rate. Also, to minimize latency when there is pending input
 #: to be processed, this option is ignored.
 
-input_delay 1
+input_delay 2
 
 #: Delay before input from the program running in the terminal is
 #: processed (in milliseconds). Note that decreasing it will increase
@@ -1191,11 +1191,11 @@ tab_title_template "{index}:{title}"
 #: Template to use for active tabs. If not specified falls back to
 #: tab_title_template.
 
-# active_tab_foreground   #504945
-# active_tab_background   #ebdbb2
-# inactive_tab_foreground #ebdbb2
-# inactive_tab_background #504945
+active_tab_foreground   #504945
+active_tab_background   #ebdbb2
 active_tab_font_style   normal
+inactive_tab_foreground #ebdbb2
+inactive_tab_background #504945
 inactive_tab_font_style normal
 
 #: Tab bar colors and styles.
@@ -1221,7 +1221,7 @@ inactive_tab_font_style normal
 
 #: The foreground and background colors.
 
-background_opacity 0.8
+background_opacity 0.7
 
 #: The opacity of the background. A number between zero and one, where
 #: one is opaque and zero is fully transparent. This will only work if
@@ -1246,7 +1246,7 @@ background_opacity 0.8
 #: will only work if dynamic_background_opacity was enabled in the
 #: original config.
 
-background_blur 64
+# background_blur 64
 
 #: Set to a positive value to enable background blur (blurring of the
 #: visuals behind a transparent window) on platforms that support it.
@@ -1904,7 +1904,7 @@ shell_integration disabled
 #: to x11 or wayland to force the choice. Changing this option by
 #: reloading the config is not supported.
 
-wayland_enable_ime no
+# wayland_enable_ime yes
 
 #: Enable Input Method Extension on Wayland. This is typically used
 #: for inputting text in East Asian languages. However, its

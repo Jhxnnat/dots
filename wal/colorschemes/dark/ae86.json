@@ -1,0 +1,28 @@
+{
+    "checksum": "65184515818ddd5fcbb103b57b8f213e",
+    "wallpaper": "/home/jhxnnat/Im\u00e1genes/walls/AE86.webp",
+    "alpha": "100",
+    "special": {
+        "background": "#0a0a0a",
+        "foreground": "#c1c1c1",
+        "cursor": "#c1c1c1"
+    },
+    "colors": {
+        "color0": "#0a0a0a",
+        "color1": "#353740",
+        "color2": "#3d404a",
+        "color3": "#4c4c50",
+        "color4": "#714e25",
+        "color5": "#856e46",
+        "color6": "#818582",
+        "color7": "#958a8a",
+        "color8": "#685555",
+        "color9": "#474A56",
+        "color10": "#525663",
+        "color11": "#66666B",
+        "color12": "#976832",
+        "color13": "#B2935E",
+        "color14": "#ADB2AE",
+        "color15": "#c1c1c1"
+    }
+}

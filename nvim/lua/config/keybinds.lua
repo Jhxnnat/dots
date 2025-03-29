@@ -40,6 +40,10 @@ nmap('i', 'qq', '<ESC>')
 -- vim.keymap.set('n', '<A-{>', vim.diagnostic.goto_prev, opts)
 -- vim.keymap.set('n', '<A-}>', vim.diagnostic.goto_next, opts)
 
+-- Indent and keep visual selection
+map('v', '>', '> gv', 'Indent keep selection')
+map('v', '<', '< gv', 'Indent keep selection')
+
 -- Split
 map('n', '|', ":vsplit<CR>", "split vertical")
 map('n', '-', ":split<CR>", "split horizontal")
@@ -51,8 +55,8 @@ map('n', '<c-h>', ":wincmd h<CR>", 'move to window left')
 map('n', '<c-l>', ":wincmd l<CR>", 'move to window right')
 
 -- Oil
-map('n', '<leader>E', '<CMD>Oil<CR>', "Oil")
-map('n', '<leader>e', '<CMD>NvimTreeToggle<CR>', "File Tree")
+map('n', '<leader>e', '<CMD>Oil<CR>', "Oil")
+map('n', '<leader>E', '<CMD>NvimTreeToggle<CR>', "File Tree")
 
 -- Moving Line  
 map('n', '<a-k>', "<CMD>m .-2<CR>==", "move line up")
@@ -65,7 +69,11 @@ map('n', '<leader>h', '<CMD>noh<CR>', 'disable hightlinting')
 map('n', '<A-i>', '<CMD>lua require("FTerm").toggle()<CR>', 'toggle nonsenseTerm')
 map('t', '<A-i>', '<C-\\><C-n><CMD>lua require("FTerm").toggle()<CR>', 'toggle nonsenseTerm')
 
+-- Alpha
+map('n', '<leader>;', '<CMD>Alpha<CR>', 'Goto Alpha')
+
 -- misc
+map("n", "<leader>t", switch_theme, "switch themes")
 map("n", "<leader>P", ":PlugInstall<CR>", "vim-plug")
 map("n", "<leader>x", "<cmd>!chmod +x %<CR>", "make a file executable")
 map("n", "<leader>W", ":set wrap!<CR>", "toggle wrap")
@@ -79,7 +87,9 @@ map("n", "<leader>n", function()
 	end
 end, 'toogle relative num')
 
--- map("n", "<F5>", ":resize +2<CR>")
--- map("n", "<F6>", ":resize -2<CR>")
--- map("n", "<F7>", ":vertical resize +2<CR>")
--- map("n", "<F8>", ":vertical resize -2<CR>")
+map("n", "<C-down>", ":resize +2<CR>")
+map("n", "<C-up>", ":resize -2<CR>")
+map("n", "<C-left>", ":vertical resize -2<CR>")
+map("n", "<C-right>", ":vertical resize +2<CR>")
+
+

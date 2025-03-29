@@ -226,9 +226,9 @@ bindsym $mod+r mode "resize"
 # finds out, if available)
 bar {
     i3bar_command i3bar
-    # status_command i3status
+	status_command i3status
     # status_command i3status --config ~/.config/i3status/config
-    status_command i3blocks
+    # status_command i3blocks
 
     separator_symbol "|"
     colors {
@@ -245,14 +245,14 @@ bar {
 }
 
 # Background 
-exec_always feh --bg-scale ~/Imágenes/walls/nature-waterfall.jpg
+# exec_always feh --bg-scale ~/Imágenes/walls/sky-to-the-moon.jpg
 
 # Picom
-# exec pkill picom
-# exec_always --no-startup-id picom -b
+exec pkill picom
+exec_always --no-startup-id picom -b
 
 # polybar 
-#exec_always --no-startup-id $HOME/.config/polybar/launch.sh
+# exec_always --no-startup-id $HOME/.config/polybar/launch.sh
 
 # Pywall
 exec wal --theme "base16-grayscale"

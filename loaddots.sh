@@ -1,16 +1,17 @@
 #!/usr/bin/bash
 
-cp $HOME/.config/lvim/config.lua ./lvim/config.lua
+mkdir -p ./codium
+cp -r -v $HOME/.config/VSCodium/User/settings.json ./codium/settings.json
+cp -r -v $HOME/.config/VSCodium/User/keybindings.json ./codium/keybindings.json
 
-cp $HOME/.config/VSCodium/User/settings.json ./codium/settings.json
-cp $HOME/.config/VSCodium/User/keybindings.json ./codium/keybindings.json
-cp -r $HOME/.config/nvim/ ./nvim
-cp -r $HOME/.config/kitty/ ./kitty
-cp -r $HOME/.config/alacritty/ ./alacritty
-cp -r $HOME/.config/picom/ ./picom
-cp -r $HOME/.config/waybar/ ./waybar
-cp -r $HOME/.config/wal/ ./wal
-cp -r $HOME/.config/i3/ ./i3
-cp -r $HOME/.config/i3blocks/ ./i3blocks
-cp -r $HOME/.config/hypr/ ./hypr
+cp -r -v $HOME/.config/lvim/ .
+cp -r -v $HOME/.config/nvim/ .
+cp -r -v $HOME/.config/kitty/ .
+cp -r -v $HOME/.config/alacritty/ .
+cp -r -v $HOME/.config/picom/ .
+cp -r -v $HOME/.config/waybar/ .
+cp -r -v $HOME/.config/wal/ .
+cp -r -v $HOME/.config/i3/ .
+cp -r -v $HOME/.config/i3blocks/ .
+cp -r -v $HOME/.config/hypr/ .
 

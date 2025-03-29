@@ -3,7 +3,7 @@ local options = {
     ruler = false, --disable extra numbering
     showmode = false, --not needed due to lualine
     showcmd = false,
-    wrap = true, --toggle bound to leader W
+    wrap = false, --toggle bound to leader W
     mouse = "a", --enable mouse
     clipboard = "unnamedplus", --system clipboard integration
     history = 100, --command line history
@@ -34,6 +34,7 @@ local options = {
     smartcase = true, --but do not ignore if caps are used
 
     splitkeep = 'screen', --stablizie window open/close
+	guicursor = "n-v-i-c:block-Cursor"
 }
 
 for k, v in pairs(options) do

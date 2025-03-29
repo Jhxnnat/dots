@@ -1,6 +1,33 @@
-[window]
-opacity = 0.7
+[general]
+import = [
+	"~/.cache/wal/colors-alacritty.toml",
+	"~/.config/alacritty/style.toml"
+]
+live_config_reload = true
+
+# [window]
+# opacity = 0.8
+
+[colors]
+transparent_background_colors = true
 
 [font]
 normal = { family = "Iosevka Nerd Font", style = "Regular" }
-size = 12
+size = 14
+
+# [terminal]
+# shell = "fish"
+
+[mouse]
+hide_when_typing = true
+
+[keyboard]
+bindings = [
+# Increase Background Opacity
+  { key = "Up", mods = "Control|Shift", command = { program="sh", args = [ "-c",
+          "perl -i -pe 's/(opacity = )([0-1]?.?[0-9]+)/if ($2<1) {$1.($2+0.025)} else {$1.$2}/e' ~/.config/alacritty/style.toml" ] } },
+# Decrease Background Opacity
+  { key = "Down", mods = "Control|Shift", command = { program="sh", args = [ "-c",
+          "perl -i -pe 's/(opacity = )([0-1]?.?[0-9]+)/if ($2>0) {$1.($2-0.025)} else {$1.$2}/e' ~/.config/alacritty/style.toml" ] } },
+]
+

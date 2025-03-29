@@ -1,0 +1,10 @@
+Monitor eDP-1:
+	Layer level 0 (background):
+		Layer 62fc362c36e0: xywh: 0 0 1366 768, namespace: swww-daemon
+	Layer level 1 (bottom):
+		Layer 62fc36312e40: xywh: 1335 192 24 384, namespace: waybar
+	Layer level 2 (top):
+	Layer level 3 (overlay):
+
+
+
