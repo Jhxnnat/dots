@@ -9,6 +9,7 @@ Plug 'blazkowolf/gruber-darker.nvim'
 Plug 'morhetz/gruvbox'
 Plug 'uZer/pywal16.nvim'
 Plug 'slugbyte/lackluster.nvim'
+Plug 'sainnhe/gruvbox-material'
 
 Plug 'nvim-lua/plenary.nvim'
 Plug 'nvim-telescope/telescope.nvim'
@@ -36,16 +37,20 @@ require("config.opt")
 require("config.keybinds")
 
 require("plugin.cmp")
--- require("plugin.lualine")
+require("plugin.lualine")
 require("plugin.miniline")
 require("plugin.nvimtree")
 require("plugin.oil")
+require("plugin.colorizer")
 
 require("nvim-autopairs").setup {}
 require'alpha'.setup(require'alpha.themes.startify'.config)
 require('cmp').setup({ name = 'buffer' })
 
-vim.cmd.colorscheme("gruber-darker")
+vim.g.gruvbox_material_background = "hard"
+vim.g.gruvbox_material_foreground = "original"
+vim.g.gruvbox_material_statusline_style = "original"
+vim.cmd.colorscheme("gruvbox-material")
 
 -- TODO: move lines up-down (insert mode)
 -- move selections up-down

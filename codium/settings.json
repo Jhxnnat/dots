@@ -2,7 +2,6 @@
     "workbench.startupEditor": "none",
     "workbench.sideBar.location": "right",
     "editor.fontFamily": "'Iosevka Nerd Font', 'Droid Sans Mono', 'monospace', monospace",
-    "workbench.colorTheme": "Wal Bordered",
     "editor.minimap.enabled": false,
     "window.menuBarVisibility": "hidden",
     "window.restoreWindows": "none",

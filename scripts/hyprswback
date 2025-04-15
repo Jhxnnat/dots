@@ -1,0 +1,82 @@
+#!/bin/bash
+
+set -ex
+
+DIR=$HOME/Imágenes/walls/
+PICS=($(ls ${DIR}))
+SELECTED=""
+ROFITHEME=$HOME/.config/rofi/themes/wallpaper.rasi
+ROFITHEME_WALMODE=$HOME/.config/rofi/themes/wallpapermode.rasi
+
+select_wall () {
+    CURRENT=$(pwd)
+    cd $DIR
+    WALL=$(for a in *; do echo -en "$a\0icon\x1f$a\n"; done | rofi -dmenu -theme $ROFITHEME)
+    SELECTED=$DIR$WALL
+    cd $CURRENT
+}
+
+set_background () {
+    if [[ $(pidof swww) ]]; then
+      pkill swww
+    fi
+
+    swww img ${SELECTED} --transition-type outer --transition-fps 30 --transition-duration 0.5
+    sleep 0.5
+}
+
+# OPTION=$(echo 'dark|light|dark_pre|light_pre' | rofi -dmenu -sep '|' -theme $ROFITHEME_WALMODE)
+OPTION=$(echo 'automatico|predefinido|desaturado' | rofi -dmenu -sep '|' -theme $ROFITHEME_WALMODE)
+
+case "$OPTION" in
+	automatico)
+		select_wall
+		set_background
+		wal -i ${SELECTED} --cols16 -n
+		;;
+	light)
+		select_wall
+		set_background
+		wal -i ${SELECTED} --cols16 -l -n
+		;;
+	predefinido)
+		THEME=$(wal --theme | awk -F'(' '{print $1}' | grep -v ':' | sed 's/^ - //' | rofi -dmenu -p "Theme")
+		select_wall
+		set_background
+		wal --theme $THEME -n
+		;;
+	light_pre)
+		THEME=$(wal --theme | awk -F'(' '{print $1}' | grep -v ':' | sed 's/^ - //' | rofi -dmenu -p "Theme")
+		select_wall
+		set_background
+		wal --theme $THEME -l -n
+		;;
+	desaturado)
+		OPTION2=$(echo 'automatico|predefinido|' | rofi -dmenu -sep '|' -theme $ROFITHEME_WALMODE)
+		case "$OPTION2" in
+			automatico)
+				select_wall
+				set_background
+				wal -i ${SELECTED} --cols16 -n --saturate 0.05
+				;;
+			predefinido)
+				THEME=$(wal --theme | awk -F'(' '{print $1}' | grep -v ':' | sed 's/^ - //' | rofi -dmenu -p "Theme")
+				select_wall
+				set_background
+				wal --theme $THEME -n --saturate 0.05
+				;;
+		esac
+		;;
+esac
+
+# copy current wallpaper to get access on hyprlock
+cp "$SELECTED" "$HOME/.cache/wal/current_wal"
+
+pywalfox update
+hyprctl reload
+$HOME/Dev/scripts/dunst-pywal.sh
+# themecord -p # generator for vesktop/discord
+cp $HOME/.cache/wal/system24-pywal.theme.css $HOME/.config/vesktop/themes/system24-pywal.theme.css
+# spicetify apply
+swaync-client -rs
+

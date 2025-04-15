@@ -74,13 +74,13 @@ lackluster.setup({
     },
 })
 
--- lvim.colorscheme = "ashen"
+lvim.colorscheme = "ashen"
 --lvim.colorscheme = "kanagawa"
--- lvim.colorscheme = "gruvbox-material"
+--lvim.colorscheme = "gruvbox-material"
 -- lvim.colorscheme = "gruvbox"
--- lvim.colorscheme = "gruber-darker"
--- lvim.colorscheme = "vesper"
-lvim.colorscheme = "lackluster"
+--lvim.colorscheme = "gruber-darker"
+--lvim.colorscheme = "vesper"
+-- lvim.colorscheme = "lackluster"
 
 vim.opt.shiftwidth = 4
 vim.opt.tabstop = 4
@@ -120,5 +120,5 @@ lvim.keys.normal_mode["-"] = ":split<CR>"
 -- nvim colorizer
 require('colorizer').setup()
 
-lvim.builtin.bufferline.active = false
+-- lvim.builtin.bufferline.active = false
 

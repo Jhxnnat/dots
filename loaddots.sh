@@ -15,3 +15,7 @@ cp -r -v $HOME/.config/i3/ .
 cp -r -v $HOME/.config/i3blocks/ .
 cp -r -v $HOME/.config/hypr/ .
 
+cp -r -v $HOME/Dev/scripts/ .
+
+cp -r -v $HOME/Dev/bin/kmonadconf-tdagger.kbd kmonadconf-tdagger.kbd
+

@@ -1,0 +1,4 @@
+#!/usr/bin/env bash
+
+NOFI=$(dunstctl history pop | jq '.data | .[] | .[] | (.body.data) + " - " + (.summary.data) + " " + "[" + (.appname.data) + "]"' | rofi -dmenu)
+

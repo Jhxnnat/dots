@@ -109,7 +109,7 @@ cmp.setup({
 		-- 	end
 		-- }),
 	},
-	sources = cmp.config.sources({{ name = 'nvim_lsp' }, { name = 'vsnip' },}, {{ name = 'buffer' },})
+	sources = cmp.config.sources({{ name = 'nvim_lsp' }, { name = 'vsnip' },}, {{ name = 'buffer' },}, {{ name = 'path' }})
 })
 cmp.setup.cmdline({ '/', '?' }, {
 	mapping = cmp.mapping.preset.cmdline(),

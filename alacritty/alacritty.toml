@@ -1,6 +1,6 @@
 [general]
+# "~/.cache/wal/colors-alacritty.toml",
 import = [
-	"~/.cache/wal/colors-alacritty.toml",
 	"~/.config/alacritty/style.toml"
 ]
 live_config_reload = true
@@ -13,7 +13,7 @@ transparent_background_colors = true
 
 [font]
 normal = { family = "Iosevka Nerd Font", style = "Regular" }
-size = 14
+size = 12
 
 # [terminal]
 # shell = "fish"

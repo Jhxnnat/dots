@@ -1,0 +1,20 @@
+#!/usr/bin/env bash
+
+# script from: https://youtu.be/7yHYH7I4o9s
+# to record screen
+
+rec() {
+    ffmpeg -s 1366x768 -f x11grab -r 30 -i :0.0+0 -c:v h264 -qp 0 "$HOME/Vídeos/recorded_$(date '+%a_%b%d_%H_%M_%S').mkv" &
+    echo $! > /tmp/recpid
+
+    notify-send -t 500 "Recording Started"
+}
+
+end () {
+    kill -15 "$(cat /tmp/recpid)" && rm -f /tmp/recpid
+
+    notify-send -t 500 "Recording Finished"
+}
+
+([[ -f /tmp/recpid ]] && end && exit 0) || rec
+
