@@ -19,3 +19,5 @@ cp -r -v $HOME/Dev/scripts/ .
 
 cp -r -v $HOME/Dev/bin/kmonadconf-tdagger.kbd kmonadconf-tdagger.kbd
 
+cp -r -v $HOME/.tmux.conf .tmux.conf
+
