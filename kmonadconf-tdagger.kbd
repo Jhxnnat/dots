@@ -35,20 +35,22 @@
 	pnxt M-f11
 	pprv M-f9
 	tmic M-f12 
+
+	rtct (tap-next ret lctl) ;; caps-lock -> tap enter hold control
 )
 
 (deflayer capsmeta
   grv  1    2    3    4    5    6    7    8    9    0    -    =    bspc
   tab  q    w    e    r    t    y    u    i    o    p    [    ]    \
-  lctl  a    s    d    f    g    h    j    k    l    ;    '    ret
-  lsft z    x    c    v    b    n    m    ,    .    /    lmet
-  @arrow lmet lalt           spc            ralt rmet cmp @arrow
+  @rtct  a    s    d    f    g    h    j    k    l    ;    '    ret
+  lsft z    x    c    v    b    n    m    ,    .    /    @arrow
+  @arrow lmet lalt          spc            ralt rmet cmp lalt
 )
 
 (deflayer arrowlay
   grv @bdown @bup @pprv @ptgg @pnxt @mute @voldown @volup 9   del    -    =   del
-  tab  q    w    e    r    t    y    u    up    o   p   bspc   ]    \
-  lctl  home s  end    f    g    h  left down right  ;  ret    ret
-  lsft z    x    c    v    b    n   @tmic  ,   .    /    lmet
-  @arrow lmet lalt           spc            ralt rmet cmp  rctl
+  caps  q    w    e    r    t    y    u    up    o   p   bspc   ]    \
+  @rtct  home s  end    f    g    h  left down right  ;  ret    ret
+  lsft z    x    c    v    b    n   @tmic  ,   .    /    lsft
+  @arrow lmet lalt           spc            ralt rmet cmp lalt
 )
