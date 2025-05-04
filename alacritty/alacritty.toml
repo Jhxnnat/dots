@@ -1,12 +1,13 @@
 [general]
-# "~/.cache/wal/colors-alacritty.toml",
 import = [
-	"~/.config/alacritty/style.toml"
+	"~/.config/alacritty/kanagawa_lotus.toml"
 ]
 live_config_reload = true
 
-# [window]
-# opacity = 0.8
+[window]
+opacity = 1.0
+decorations = "Buttonless"
+resize_increments = true
 
 [colors]
 transparent_background_colors = true

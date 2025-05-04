@@ -1,6 +1,6 @@
 
 (defcfg
-  ;; input (device-file "/dev/input/by-path/platform-i8042-serio-0-event-kbd")
+  ;; input (device-file "/dev/input/by-id/usb-SINO_WEALTH_Gaming_KB-event-kbd")
   input (device-file "/dev/input/by-id/usb-SINO_WEALTH_Gaming_KB-event-kbd")
   output (uinput-sink "My KMonad output"
     ;; To understand the importance of the following line, see the section on
@@ -42,15 +42,15 @@
 (deflayer capsmeta
   grv  1    2    3    4    5    6    7    8    9    0    -    =    bspc
   tab  q    w    e    r    t    y    u    i    o    p    [    ]    \
-  @rtct  a    s    d    f    g    h    j    k    l    ;    '    ret
-  lsft z    x    c    v    b    n    m    ,    .    /    @arrow
-  @arrow lmet lalt          spc            ralt rmet cmp lalt
+  lctl  a    s    d    f    g    h    j    k    l    ;    '    ret
+  lsft z    x    c    v    b    n    m    ,    .    /    lmet
+  @arrow lmet lalt          spc            ralt rmet cmp @arrow
 )
 
 (deflayer arrowlay
   grv @bdown @bup @pprv @ptgg @pnxt @mute @voldown @volup 9   del    -    =   del
   caps  q    w    e    r    t    y    u    up    o   p   bspc   ]    \
-  @rtct  home s  end    f    g    h  left down right  ;  ret    ret
+  lctl  home s  end    f    g    h  left down right  ;  ret    ret
   lsft z    x    c    v    b    n   @tmic  ,   .    /    lsft
   @arrow lmet lalt           spc            ralt rmet cmp lalt
 )
