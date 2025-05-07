@@ -16,6 +16,7 @@ local builtin = require('telescope.builtin')
 map('n', '<leader>f', builtin.find_files, 'Telescope find files')
 map('n', '<leader>sg', builtin.live_grep, 'Telescope live grep')
 map('n', '<leader>sb', builtin.buffers, 'Telescope buffers')
+map('n', '<leader>b', builtin.buffers, 'Telescope buffers')
 map('n', '<leader>sh', builtin.help_tags, 'Telescope help tags')
 
 -- swap I and H

@@ -6,7 +6,7 @@ end
 
 lualine.setup {
     options = {
-        theme = 'auto',
+        theme = 'zenbones',
         section_separators = { left = '', component_separators = '' },
         refresh = {
               statusline = 50,

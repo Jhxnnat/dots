@@ -16,6 +16,8 @@ Plug 'sainnhe/gruvbox-material'
 Plug 'nyoom-engineering/oxocarbon.nvim'
 Plug 'rose-pine/neovim'
 Plug 'MetriC-DT/balance-theme.nvim'
+Plug 'zenbones-theme/zenbones.nvim'
+Plug 'rktjmp/lush.nvim'
 
 Plug 'nvim-lua/plenary.nvim'
 Plug 'nvim-telescope/telescope.nvim'
@@ -55,13 +57,14 @@ require("nvim-autopairs").setup {}
 require'alpha'.setup(require'alpha.themes.startify'.config)
 require('cmp').setup({ name = 'buffer' })
 
+-- require("palettes.kanagawa")
 -- vim.g.gruvbox_material_background = "hard"
 -- vim.g.gruvbox_material_foreground = "original"
 -- vim.g.gruvbox_material_statusline_style = "original"
+-- vim.cmd.colorscheme("gruber-darker")
 vim.opt.background = "light"
-vim.cmd.colorscheme("gruber-darker")
-vim.cmd.colorscheme("kanagawa")
-
+require("colors.minbones")
+-- vim.cmd.colorscheme("zenbones")
 
 -- TODO: move lines up-down (insert mode)
 -- move selections up-down
