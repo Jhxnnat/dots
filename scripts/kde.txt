@@ -1,5 +1,0 @@
-[ -f /etc/xprofile ] && . /etc/xprofile
-[ -f ~/.xprofile ] && . ~/.xprofile
-
-export DESKTOP_SESSION=plasma
-exec startplasma-x11
