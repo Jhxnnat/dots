@@ -1,4 +1,0 @@
-#!/bin/bash
-
-VALUE=$(brightnessctl g)
-echo "$(( $VALUE * 100 / 255 ))% 󰃟 "

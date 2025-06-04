@@ -1,4 +1,3 @@
-
 # set -g fish_key_bindings fish_vi_key_bindings
 set fish_cursor_insert block
 
@@ -6,7 +5,7 @@ alias neofetch="fastfetch -c ~/Dev/terceros/neofetch.jsonc"
 alias n="nvim"
 
 function fish_greeting
-	random choice "Hola" "Haloou" "Fedora btw" "When ReD?" "175 = 300"
+	random choice "Debian btw" "When ReD?" "175 = 300"
 end
 
 if status is-interactive
