@@ -1,7 +1,7 @@
 local options = {
 	laststatus = 3,
-    ruler = false, --disable extra numbering
-    showmode = false, --not needed due to lualine
+    -- ruler = false, --disable extra numbering
+    -- showmode = false, --not needed due to lualine
     showcmd = false,
     wrap = false, --toggle bound to leader W
     mouse = "a", --enable mouse
@@ -34,13 +34,13 @@ local options = {
     smartcase = true, --but do not ignore if caps are used
 
     splitkeep = 'screen', --stablizie window open/close
-	guicursor = "n-v-i-c:block-Cursor"
+	-- guicursor = "n-v-i-c:block-Cursor"
 }
 
 for k, v in pairs(options) do
 	vim.opt[k] = v
 end
 
-vim.diagnostic.config({
-	signs = false,
-})
+-- vim.diagnostic.config({
+-- 	signs = false,
+-- })
