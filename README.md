@@ -1,7 +1,7 @@
 Computer configurations files in case of emergency, or os reinstall...
 
 * Skarr: main laptop
-* ???: VPS
+* ?: VPS
 
 ## Seting up
 
