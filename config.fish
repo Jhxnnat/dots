@@ -5,7 +5,7 @@ alias neofetch="fastfetch -c ~/.config/fastfetch/neofetch.jsonc"
 alias n="nvim"
 
 function fish_greeting
-	random choice "Rolling Release btw" "When Music?" "175 = 300"
+	random choice "42" "When Music?" "175 = 300" "Rewrite ReD" "make malloc" "yshell"
 end
 
 if status is-interactive

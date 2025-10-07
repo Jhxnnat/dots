@@ -1,11 +1,10 @@
--- neovim :)
-
 local vim = vim
 local Plug = vim.fn['plug#']
 
 vim.call('plug#begin')
 
--- Plug 'blazkowolf/gruber-darker.nvim'
+Plug 'blazkowolf/gruber-darker.nvim'
+Plug 'Mofiqul/adwaita.nvim'
 
 Plug 'nvim-lua/plenary.nvim'
 Plug 'nvim-telescope/telescope.nvim'
@@ -36,13 +35,4 @@ require("plugin.alpha")
 
 require("nvim-autopairs").setup {}
 
--- vim.cmd.colorscheme("gruber-darker")
-
--- Neovide
-if vim.g.neovide then
-    vim.keymap.set({ "n", "v" }, "<C-+>", ":lua vim.g.neovide_scale_factor = vim.g.neovide_scale_factor + 0.1<CR>")
-    vim.keymap.set({ "n", "v" }, "<C-->", ":lua vim.g.neovide_scale_factor = vim.g.neovide_scale_factor - 0.1<CR>")
-    vim.keymap.set({ "n" , "v" }, "<C-0>", ":lua vim.g.neovide_scale_factor = 1<CR>")
-	vim.o.guifont = "Iosevka Nerd Font" -- text below applies for VimScript
-end
-
+vim.cmd.colorscheme('adwaita')
