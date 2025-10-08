@@ -1,7 +1,7 @@
 local options = {
 	laststatus = 3,
     -- ruler = false, --disable extra numbering
-    -- showmode = false, --not needed due to lualine
+    -- showmode = false, --not needed due to bufferline
     showcmd = false,
     wrap = false, --toggle bound to leader W
     mouse = "a", --enable mouse
@@ -10,7 +10,7 @@ local options = {
     swapfile = false, --swap just gets in the way, usually
     backup = false,
     undofile = true, --undos are saved to file
-    cursorline = true, --highlight line
+    cursorline = false,
     ttyfast = true, --faster scrolling
     smoothscroll = true,
 	
@@ -23,10 +23,6 @@ local options = {
     autoindent = false,
     tabstop = 4, --visual width of tab
 	shiftwidth = 4,
-
-    -- foldmethod = "expr",
-    -- foldlevel = 99, --disable folding, lower #s enable
-    -- foldexpr = "nvim_treesitter#foldexpr()",
 	
     termguicolors = true,
 
@@ -34,7 +30,7 @@ local options = {
     smartcase = true, --but do not ignore if caps are used
 
     splitkeep = 'screen', --stablizie window open/close
-	-- guicursor = "n-v-i-c:block-Cursor"
+	guicursor = "n-v-i-c:block-Cursor"
 }
 
 for k, v in pairs(options) do

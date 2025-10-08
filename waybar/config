@@ -1,0 +1,91 @@
+{
+    "layer": "top",
+    "position": "bottom",
+    "height": 20,
+    "width": 1366,
+    "modules-left": ["niri/workspaces", "niri/window"],
+    "modules-right": ["tray", "pulseaudio", "network", "battery", "backlight", "clock"],
+
+    "tray": {
+        // "icon-size": 21,
+        "spacing": 10
+    },
+    "clock": {
+		"format": " {:%d | %H:%M}",
+        "format-alt": "{:%A, %Y-%m-%d %H:%M:%OS %Z}",
+		"interval": 1
+    },
+    "cpu": {
+        "format": "{usage:02}",
+        "interval": 2
+    },
+    "memory": {
+        "format": "{used:0.2f}",
+        "interval": 2
+    },
+    "temperature": {
+        // "thermal-zone": 2,
+        // "hwmon-path": "/sys/class/hwmon/hwmon2/temp1_input",
+        "critical-threshold": 80,
+        // "format-critical": "{temperatureC}°C {icon}",
+        "format": "{temperatureC}°C {icon}",
+        "format-icons": ["", "", ""]
+    },
+    "idle_inhibitor": {
+        "format": "{icon}",
+        "format-icons": {
+            "activated": "",
+            "deactivated": ""
+        }
+    },
+    "battery": {
+        // "bat": "BAT0",
+        "states": {
+            "good": 75,
+            "warning": 25,
+            "critical": 10
+        },
+        "interval": 10,
+        "format": "{icon} {capacity:02} | {power:0.1f}W",
+        // "format-good": "", // An empty format will hide the module
+        // "format-full": "",
+		"format-charging": " {capacity:02} | {power:0.1f}W",
+        "format-icons": [" ", " ", " ", " ", " "]
+    },
+    "network": {
+        // "format-wifi": " {essid} {signaldBm}",
+        "format-wifi": "",
+        "format-ethernet": "⇌ {ifname}: {ipaddr}",
+        "format-disconnected": "⚠ ",
+        "interval": 5
+    },
+    "wireplumber": {
+        "format": "{volume}% {icon}",
+        "format-muted": "",
+        "on-click": "helvum",
+        "format-icons": ["", "", ""]
+    },
+    "pulseaudio": {
+        //"scroll-step": 1,
+        "format": "{icon} {volume:02}",
+        "format-bluetooth": "{icon} {volume:02} ",
+        "format-muted": "",
+        "format-icons": {
+            "headphones": "",
+            "handsfree": "",
+            "headset": "",
+            "phone": "",
+            "portable": "",
+            "car": "",
+            "default": ["", ""]
+        },
+        "on-click": "pavucontrol"
+    },
+	"backlight": {
+		"format": " {percent}",
+		//"format-icons": ["", ""],
+	},
+	"custom/sep": {
+		"format": "/"
+	}
+}

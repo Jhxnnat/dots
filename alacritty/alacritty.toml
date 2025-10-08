@@ -1,0 +1,33 @@
+[window]
+decorations = "None"
+
+[colors.primary]
+background = "#000000"
+foreground = "#eaeaea"
+
+[font]
+size = 11
+
+[font.bold]
+family = "Adwaita Mono"
+style = "Bold"
+
+[font.bold_italic]
+family = "Adwaita Mono"
+style = "Bold Italic"
+
+[font.italic]
+family = "Adwaita Mono"
+style = "Italic"
+
+[font.normal]
+family = "Adwaita Mono"
+style = "Regular"
+
+[scrolling]
+history = 5000
+multiplier = 3
+
+# [terminal]
+# [terminal.shell]
+# program = "/bin/zsh"

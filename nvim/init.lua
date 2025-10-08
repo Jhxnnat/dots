@@ -35,4 +35,4 @@ require("plugin.alpha")
 
 require("nvim-autopairs").setup {}
 
-vim.cmd.colorscheme('adwaita')
+vim.cmd.colorscheme('lunaperche')
