@@ -1,0 +1,131 @@
+* {
+    border: none;
+    border-radius: 0;
+    font-family: "Adwaita Mono";
+    font-size: 12px;
+    font-weight: bold;
+    min-height: 0;
+}
+
+window#waybar {
+    background: rgba(0, 0, 0, 1);
+    color: rgba(255, 255, 255, 1);
+}
+
+#window {
+    color: rgba(255, 255, 255, 1);
+}
+
+#workspaces button {
+    padding: 0;
+    background: transparent;
+    color: rgba(255, 255, 255, 0.8);
+}
+
+#workspaces button.focused {
+	color: black;
+    background-color: white;
+}
+#workspaces button.active {
+	color: black;
+    background-color: white;
+}
+
+#mode {
+   /* border-bottom: 3px solid white;*/
+}
+
+#clock, #backlight, #battery, #cpu, #memory, #network, #pulseaudio, #tray, #mode {
+    /* color: rgba(0, 0, 0, 1); */
+    padding: 0 8px;
+    margin: 0;
+}
+
+/* #clock { */
+/*     border-top-right-radius: 4px; */
+/* } */
+/**/
+/* #pulseaudio { */
+/*     background-color: #ef2f27; */
+/* } */
+/**/
+/* #network { */
+/*     background-color: #ff8700; */
+/* } */
+/**/
+/* #cpu { */
+/*     background-color: #afaf87; */
+/* } */
+/**/
+/* #memory { */
+/*     background-color: #87ff00; */
+/* } */
+/**/
+/* #battery { */
+/*     background-color: #5fd7ff; */
+/* } */
+/**/
+/* #backlight { */
+/*     background-color: #af5fff; */
+/* } */
+/**/
+/* #clock { */
+/*     background-color: #afaf87; */
+/* } */
+
+#battery icon {
+    color: red;
+}
+
+#battery.charging {
+}
+
+/* @keyframes blink {
+    to {
+        background-color: @color5;
+        color: @color7;
+    }
+}
+
+#battery.warning:not(.charging) {
+    color: @color0;
+    animation-name: blink;
+    animation-duration: 3.0s;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+} */
+
+/*
+#battery.warning:not(.charging) {
+}
+
+#cpu {
+    background-color: #5f819d;
+}
+
+#memory {
+    background-color: #85678f;
+}
+
+#network {
+    background-color: #de935f;
+}
+
+#network.disconnected {
+}
+
+#pulseaudio {
+    background-color: #5f819d;
+}
+
+*/
+
+/*#pulseaudio.muted {
+}*/
+
+#tray {
+    background-color: transparent;
+}
+
+
