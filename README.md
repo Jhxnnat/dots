@@ -1,6 +1,6 @@
 Computer configurations files in case of emergency, or os reinstall...
 
-* Skarr: main laptop
+* **Skarr**: main laptop
 * ???: VPS
 
 ## Seting up
@@ -39,8 +39,7 @@ ssh-copy-id jhx@*****
 
 symlinks:
 
-* edit $repopath before!
-* bash ./link.sh
+* check the `link.sh` file
 
 kmonad systemd services:
 
