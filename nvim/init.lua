@@ -35,4 +35,5 @@ require("plugin.alpha")
 
 require("nvim-autopairs").setup {}
 
-vim.cmd.colorscheme('lunaperche')
+--vim.cmd.colorscheme('lunaperche')
+vim.cmd.colorscheme('vim')

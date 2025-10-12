@@ -53,7 +53,7 @@ kmonad systemd services:
 
 ```
 sudo cp ./kmonad/kmonadconf-tdagger.kbd /etc/kmonad/kmonadconf-tdagger.kbd
-sudo cp ./kmonad/kmonadconf-laptop.kbd /etc/kmonad/kmonadconf-laptop.kbd
+sudo cp ./kmonad/kmonadconf-builtin.kbd /etc/kmonad/kmonadconf-builtin.kbd
 sudo cp ./kmonad/kmonad_builtin.service /etc/systemd/user/kmonad_builtin.service
 sudo cp ./kmonad/kmonad_external.service /etc/systemd/user/kmonad_external.service
 sudo cp ./kmonad/kmonad_script_external.sh /etc/kmonad/kmonad_script_external.sh

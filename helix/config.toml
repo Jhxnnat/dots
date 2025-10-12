@@ -28,8 +28,8 @@ layout = ["diff", "line-numbers", "spacer", "diagnostics"]
 [editor.gutters.line-numbers]
 min-width = 1
 
-[editor.cursor-shape]
-insert = "bar"
+# [editor.cursor-shape]
+# insert = "bar"
 
 [editor.statusline]
 mode.normal = "NORMAL"
