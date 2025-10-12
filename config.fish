@@ -1,7 +1,6 @@
 set fish_cursor_insert block
 set -U fish_prompt_pwd_dir_length 0
 
-alias neofetch="fastfetch -c ~/.config/fastfetch/neofetch.jsonc"
 alias n="nvim"
 
 function fish_greeting
