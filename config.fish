@@ -2,6 +2,7 @@ set fish_cursor_insert block
 set -U fish_prompt_pwd_dir_length 0
 
 alias n="nvim"
+alias codium="flatpak run com.vscodium.codium"
 
 function fish_greeting
 	random choice "42" "When Music?" "175 = 300" "Rewrite ReD" "make malloc" "yshell"
