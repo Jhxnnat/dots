@@ -30,7 +30,7 @@ local options = {
     smartcase = true, --but do not ignore if caps are used
 
     splitkeep = 'screen', --stablizie window open/close
-	guicursor = "n-v-i-c:block-Cursor"
+	-- guicursor = "n-v-i-c:block-Cursor"
 }
 
 for k, v in pairs(options) do

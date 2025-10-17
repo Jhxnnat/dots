@@ -22,7 +22,7 @@ sudo pacman -Syu neovim helix fish tmux
 
 ```
 chmod +x ./kmonad
-sudo cp ./kmonad /sbin/kmonad
+sudo cp ./kmonad /usr/local/bin/kmonad
 ```
 
 ```
@@ -52,13 +52,14 @@ kmonad systemd services:
     * ./kmonad/kmonadconf-laptop.kbd
 
 ```
+sudo mkdir -p /etc/kmonad
 sudo cp ./kmonad/kmonadconf-tdagger.kbd /etc/kmonad/kmonadconf-tdagger.kbd
 sudo cp ./kmonad/kmonad_external.service /etc/systemd/user/kmonad_external.service
 sudo cp ./kmonad/kmonad_script_external.sh /etc/kmonad/kmonad_script_external.sh
 ```
 
 ```
-systemctl --user daemon-reload
-systemctl --user enable kmonad_external
-systemctl --user start kmonad_external
+systemctl daemon-reload
+systemctl enable kmonad_external
+systemctl start kmonad_external
 ```
