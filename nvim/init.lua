@@ -18,16 +18,30 @@ Plug 'nvim-tree/nvim-tree.lua'
 Plug 'numToStr/FTerm.nvim'
 Plug 'nvim-lualine/lualine.nvim'
 
+Plug 'hrsh7th/cmp-nvim-lsp'
 Plug 'hrsh7th/cmp-buffer'
 Plug 'hrsh7th/cmp-path'
 Plug 'hrsh7th/cmp-cmdline'
 Plug 'hrsh7th/nvim-cmp'
 
+Plug 'neovim/nvim-lspconfig'
+
 vim.call('plug#end')
 
 require("config.opt")
 require("config.keybinds")
-require("config.lspconfig")
+-- require("config.lspconfig")
+
+vim.lsp.config('*', {
+	require('cmp_nvim_lsp').default_capabilities()
+})
+vim.lsp.config('rust_analyzer', {
+	filetypes = { 'rust' },
+	capabilities = capabilities
+})
+
+vim.lsp.enable('rust_analyzer')
+vim.diagnostic.config({ virtual_text = true })
 
 require("plugin.cmp")
 require("plugin.nvimtree")
@@ -38,7 +52,4 @@ require("plugin.lualine")
 
 require("nvim-autopairs").setup {}
 
--- vim.cmd.colorscheme('lunaperche')
--- vim.cmd.colorscheme('vim')
-vim.cmd.colorscheme('adwaita')
--- vim.cmd.colorscheme('gruber-darker')
+vim.cmd.colorscheme('lunaperche')
