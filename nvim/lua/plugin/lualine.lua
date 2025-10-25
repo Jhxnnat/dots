@@ -6,14 +6,14 @@ end
 
 lualine.setup {
     options = {
-        theme = 'zenbones',
+        -- theme = 'zenbones',
         section_separators = { left = '', component_separators = '' },
         refresh = {
               statusline = 50,
         }
     },
 	sections = {
-	    lualine_a = { neovimlogo, 'mode'},
+	    lualine_a = {'mode'},
 	    lualine_b = {'branch'},
 	    lualine_c = {'filename'},
 	    lualine_x = {'encoding'},

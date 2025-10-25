@@ -16,6 +16,7 @@ Plug 'goolord/alpha-nvim'
 Plug 'nvim-tree/nvim-web-devicons'
 Plug 'nvim-tree/nvim-tree.lua'
 Plug 'numToStr/FTerm.nvim'
+Plug 'nvim-lualine/lualine.nvim'
 
 Plug 'hrsh7th/cmp-buffer'
 Plug 'hrsh7th/cmp-path'
@@ -26,15 +27,18 @@ vim.call('plug#end')
 
 require("config.opt")
 require("config.keybinds")
+require("config.lspconfig")
 
 require("plugin.cmp")
 require("plugin.nvimtree")
 require("plugin.oil")
 require("plugin.colorizer")
 require("plugin.alpha")
+require("plugin.lualine")
 
 require("nvim-autopairs").setup {}
 
 -- vim.cmd.colorscheme('lunaperche')
 -- vim.cmd.colorscheme('vim')
 vim.cmd.colorscheme('adwaita')
+-- vim.cmd.colorscheme('gruber-darker')
