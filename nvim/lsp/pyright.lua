@@ -1,12 +1,11 @@
 return {
-	cmd = { "rust-analyzer" },
-	filetypes = { "rust" },
+	cmd = { "pyright" },
+	filetypes = { "python" },
 	settings = {
-	  ["rust-analyzer"] = {
+	  ["pyright"] = {
 		  diagnostics = {
 			  enable = true,
 		  }
 	  }
 	},
 }
-

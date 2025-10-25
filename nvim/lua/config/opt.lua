@@ -15,7 +15,7 @@ local options = {
     smoothscroll = true,
     number = true, --numbering lines
     relativenumber = true, --toggle bound to leader nn
-    numberwidth = 4,
+    numberwidth = 5,
     smarttab = true, --indentation stuff
     cindent = true,
     autoindent = false,
@@ -25,6 +25,8 @@ local options = {
     ignorecase = true, --ignore case while searching
     smartcase = true, --but do not ignore if caps are used
     splitkeep = 'screen', --stablizie window open/close
+	-- statuscolumn = "%s%C%3l│"
+	signcolumn = "yes:1"
 }
 for k, v in pairs(options) do
 	vim.opt[k] = v

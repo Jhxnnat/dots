@@ -30,18 +30,11 @@ vim.call('plug#end')
 
 require("config.opt")
 require("config.keybinds")
--- require("config.lspconfig")
 
 vim.lsp.config('*', {
 	require('cmp_nvim_lsp').default_capabilities()
 })
-vim.lsp.config('rust_analyzer', {
-	filetypes = { 'rust' },
-	capabilities = capabilities
-})
-
-vim.lsp.enable('rust_analyzer')
-vim.diagnostic.config({ virtual_text = true })
+require("config.lspconfig")
 
 require("plugin.cmp")
 require("plugin.nvimtree")
@@ -53,3 +46,4 @@ require("plugin.lualine")
 require("nvim-autopairs").setup {}
 
 vim.cmd.colorscheme('lunaperche')
+
