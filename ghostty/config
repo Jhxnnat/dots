@@ -7,9 +7,7 @@ font-size = 14
 # gtk-titlebar-style = tabs
 gtk-titlebar = false
 
-# theme = dark:gruberdarker,light:lighttheme
-# theme = light:Rose Pine Dawn,dark:Rose Pine
-theme = light:rosepinedawn_black,dark:rosepine_black
+theme = light:Adwaita,dark:Adwaita Dark
 window-theme = ghostty
 
 window-width = 73

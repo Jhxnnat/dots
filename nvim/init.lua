@@ -3,9 +3,8 @@ local Plug = vim.fn['plug#']
 
 vim.call('plug#begin')
 
-Plug 'blazkowolf/gruber-darker.nvim'
 Plug 'Mofiqul/adwaita.nvim'
-Plug 'rose-pine/neovim'
+Plug 'p00f/alabaster.nvim'
 
 Plug 'nvim-lua/plenary.nvim'
 Plug 'nvim-telescope/telescope.nvim'
@@ -46,21 +45,5 @@ require("plugin.lualine")
 
 require("nvim-autopairs").setup {}
 
-require("rose-pine").setup({
-	palette = {
-		main = {
-			base = '#000000',
-		},
-		dawn = {
-			-- comment...
-			base = '#ffffff',
-			text = '#000000',
-			glod = '#af5f00',
-			foam = '#352882',
-			pine = '#08465e'
-		},
-	},
-})
-
-vim.cmd.colorscheme("rose-pine")
+vim.cmd.colorscheme("alabaster")
 
