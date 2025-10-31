@@ -1,0 +1,16 @@
+# ghostty +show-config --default --docs
+# https://ghostty.org/docs/config.
+
+font-family = Iosevka NF
+font-size = 14
+
+# gtk-titlebar-style = tabs
+gtk-titlebar = false
+
+# theme = dark:gruberdarker,light:lighttheme
+# theme = light:Rose Pine Dawn,dark:Rose Pine
+theme = light:rosepinedawn_black,dark:rosepine_black
+window-theme = ghostty
+
+window-width = 73
+window-height = 24
