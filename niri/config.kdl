@@ -4,7 +4,7 @@
 // https://yalter.github.io/niri/Configuration:-Introduction
 
 spawn-at-startup "waybar"
-spawn-at-startup "swaybg" "-m" "fill" "-i" "/home/jhxnnat/Imágenes/wallpapers/halftone-metropolis.png"
+spawn-at-startup "swaybg" "-m" "fill" "-i" "/usr/share/backgrounds/sway/Sway_Wallpaper_Blue_1366x768.png"
 
 // Input device configuration.
 // Find the full list of options on the wiki:
@@ -107,7 +107,7 @@ output "eDP-1" {
     // so to put another output directly adjacent to it on the right, set its x to 1920.
     // If the position is unset or results in an overlap, the output is instead placed
     // automatically.
-    position x=1280 y=0
+    position x=1366 y=0
 }
 
 // Settings that influence how windows are positioned and sized.
@@ -163,7 +163,7 @@ layout {
         // off
 
         // How many logical pixels the ring extends out from the windows.
-        width 1
+        width 2
         
         // Colors can be set in a variety of ways:
         // - CSS named colors: "red"
@@ -171,8 +171,7 @@ layout {
         // - CSS-like notation: "rgb(255, 127, 0)", rgba(), hsl() and a few others.
 
         // Color of the ring on the active monitor.
-        // active-color "#FF8700"
-        active-color "#FFD787"
+		active-color "rgb(220, 220, 220)"
 
         // Color of the ring on inactive monitors.
         //
@@ -293,7 +292,7 @@ hotkey-overlay {
 // You can change the path where screenshots are saved.
 // A ~ at the front will be expanded to the home directory.
 // The path is formatted with strftime(3) to give you the screenshot date and time.
-screenshot-path "~/Pictures/Niri/Captura del %Y-%m-%d %H-%M-%S.png"
+screenshot-path "~/Imágenes/Niri/Captura del %Y-%m-%d %H-%M-%S.png"
 
 // You can also set this to null to disable saving screenshots to disk.
 // screenshot-path null
@@ -389,6 +388,11 @@ binds {
     // but you need to manually put each argument in separate "" quotes.
     XF86MonBrightnessUp allow-when-locked=true { spawn "brightnessctl" "--class=backlight" "set" "+10%"; }
     XF86MonBrightnessDown allow-when-locked=true { spawn "brightnessctl" "--class=backlight" "set" "10%-"; }
+
+	XF86AudioPlay allow-when-locked=true { spawn-sh "playerctl play-pause"; }
+    XF86AudioStop allow-when-locked=true { spawn-sh "playerctl stop"; }
+    XF86AudioPrev allow-when-locked=true { spawn-sh "playerctl previous"; }
+    XF86AudioNext allow-when-locked=true { spawn-sh "playerctl next"; }
 
     // Open/close the Overview: a zoomed-out view of workspaces and windows.
     // You can also move the mouse into the top-left hot corner,
