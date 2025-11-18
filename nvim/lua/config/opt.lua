@@ -1,11 +1,11 @@
 local options = {
 	laststatus = 3,
-    ruler = false, --disable extra numbering
-    showmode = false, --not needed due to lualine
-    showcmd = false,
-    wrap = false, --toggle bound to leader W
+    -- ruler = false, --disable extra numbering
+    -- showmode = false, --not needed due to lualine
+    -- showcmd = false,
+    wrap = false, -- bound to leader-W
     mouse = "a", --enable mouse
-    clipboard = "unnamedplus", --system clipboard integration
+    clipboard = "unnamedplus", -- system clipboard
     history = 100, --command line history
     swapfile = false, --swap just gets in the way, usually
     backup = false,

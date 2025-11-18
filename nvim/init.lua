@@ -41,9 +41,9 @@ require("plugin.nvimtree")
 require("plugin.oil")
 require("plugin.colorizer")
 require("plugin.alpha")
-require("plugin.lualine")
+-- require("plugin.lualine")
 
 require("nvim-autopairs").setup {}
 
-vim.cmd.colorscheme("alabaster")
+vim.cmd.colorscheme("lunaperche")
 

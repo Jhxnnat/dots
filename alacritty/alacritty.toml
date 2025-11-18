@@ -6,7 +6,7 @@ background = "#000000"
 foreground = "#eaeaea"
 
 [font]
-size = 11
+size = 12
 
 [font.bold]
 family = "Iosevka NF"
@@ -31,3 +31,6 @@ multiplier = 3
 # [terminal]
 # [terminal.shell]
 # program = "/bin/zsh"
+
+[env]
+TERM = "xterm-256color"
