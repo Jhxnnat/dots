@@ -3,10 +3,10 @@ set -U fish_prompt_pwd_dir_length 0
 
 alias n="nvim"
 alias hx="helix"
-# alias fastfetch="fastfetch -l PearOS"
+alias fastfetch="fastfetch -l PearOS"
 
 function fish_greeting
-	random choice "42" "When Music?" "175 = 300" "Rewrite ReD" "make malloc" "yshell"
+	echo "Rewrite ReD"
 end
 
 if status is-interactive

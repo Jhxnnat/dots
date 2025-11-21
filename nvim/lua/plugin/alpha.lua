@@ -11,7 +11,7 @@ local dashboard = require("alpha.themes.dashboard")
 
 dashboard.section.buttons.val = {
 	dashboard.button("d", "  Dev dir", ":cd ~/Dev/<CR> :Oil<CR>"),
-	dashboard.button("n", "󰯂  Notes", ":cd ~/Dev/notes/<CR> :Oil<CR>"),
+	dashboard.button("n", "󰯂  Notes", ":cd ~/Notes/<CR> :Oil<CR>"),
 	dashboard.button("c", "  Config", ":cd ~/.config/nvim/<CR> :Oil<CR>"),
 	dashboard.button("p", "  Plugins", ":PlugInstall<CR>"),
 	dashboard.button("q", "󰅙  Quit", ":q!<CR>"),

@@ -17,6 +17,7 @@ Plug 'nvim-tree/nvim-web-devicons'
 Plug 'nvim-tree/nvim-tree.lua'
 Plug 'numToStr/FTerm.nvim'
 Plug 'nvim-lualine/lualine.nvim'
+-- Plug 'MeanderingProgrammer/render-markdown.nvim'
 
 Plug 'hrsh7th/cmp-nvim-lsp'
 Plug 'hrsh7th/cmp-buffer'
@@ -44,6 +45,7 @@ require("plugin.alpha")
 -- require("plugin.lualine")
 
 require("nvim-autopairs").setup {}
+-- require("render-markdown").disable()
 
 vim.cmd.colorscheme("lunaperche")
 
