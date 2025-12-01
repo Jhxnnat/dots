@@ -42,7 +42,7 @@ map('n', '<c-l>', ":wincmd l<CR>", 'move to window right')
 
 -- Oil
 map('n', '<leader>e', '<CMD>Oil<CR>', "Oil")
-map('n', '<leader>E', '<CMD>NvimTreeToggle<CR>', "File Tree")
+-- map('n', '<leader>E', '<CMD>NvimTreeToggle<CR>', "File Tree")
 
 -- Moving Lines
 map('n', '<A-j>', "<CMD>m .+1<CR>==", "move line down")

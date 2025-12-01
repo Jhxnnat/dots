@@ -13,6 +13,7 @@ ln -s $repopath/helix ~/.config/helix
 ln -s $repopath/ghostty ~/.config/ghostty
 ln -s $repopath/swaylock ~/.config/swaylock
 ln -s $repopath/fuzzel ~/.config/fuzzel
+ln -s $repopath/mako ~/.config/mako
 ln -s $repopath/niri ~/.config/niri
 ln -s $repopath/waybar ~/.config/waybar
 ln -s $repopath/alacritty ~/.config/alacritty

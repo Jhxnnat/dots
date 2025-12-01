@@ -2,12 +2,12 @@
 # https://ghostty.org/docs/config.
 
 font-family = Iosevka NF
-font-size = 14
+font-size = 13
 
 # gtk-titlebar-style = tabs
 gtk-titlebar = false
 
-theme = light:Adwaita,dark:Adwaita Dark
+theme = Deep
 window-theme = ghostty
 
 window-width = 73

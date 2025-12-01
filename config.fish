@@ -6,7 +6,6 @@ alias hx="helix"
 alias fastfetch="fastfetch -l PearOS"
 
 function fish_greeting
-	echo "Rewrite ReD"
 end
 
 if status is-interactive

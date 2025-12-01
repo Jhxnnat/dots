@@ -1,8 +1,10 @@
 // https://yalter.github.io/niri/Configuration:-Layout
+
 layout {
 	background-color "transparent"
-    gaps 8
+    gaps 12
 
+    // When to center a column when changing focus, options are:
     // - "never", default behavior, focusing an off-screen column will keep at the left
     //   or right edge of the screen.
     // - "always", the focused column will always be centered.
@@ -49,7 +51,7 @@ layout {
         // off
 
         // How many logical pixels the ring extends out from the windows.
-        width 2
+        width 1
         
         // Colors can be set in a variety of ways:
         // - CSS named colors: "red"
@@ -57,7 +59,7 @@ layout {
         // - CSS-like notation: "rgb(255, 127, 0)", rgba(), hsl() and a few others.
 
         // Color of the ring on the active monitor.
-		active-color "rgb(220, 220, 220)"
+		active-color "#484848"
 
         // Color of the ring on inactive monitors.
         //
@@ -127,16 +129,16 @@ layout {
         // pixels and match the CSS box-shadow properties.
 
         // Softness controls the shadow blur radius.
-        softness 30
+        softness 20
 
         // Spread expands the shadow.
-        spread 5
+        spread 6
 
         // Offset moves the shadow relative to the window.
         offset x=0 y=5
 
         // You can also change the shadow color and opacity.
-        color "#0007"
+        color "rgba(0,0,0,0.8)"
     }
 
     // Struts shrink the area occupied by windows, similarly to layer-shell panels.
@@ -150,5 +152,6 @@ layout {
         // top 64
         // bottom 64
     }
-
 }
+
+

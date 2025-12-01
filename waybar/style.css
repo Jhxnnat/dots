@@ -5,6 +5,7 @@
     font-size: 13px;
     font-weight: bold;
     min-height: 0;
+	margin: 0;
 }
 
 window#waybar {
@@ -18,6 +19,7 @@ window#waybar {
 
 #workspaces button {
     padding: 0;
+	margin: 0;
     background: transparent;
 	color: #484848;
 }
@@ -29,10 +31,9 @@ window#waybar {
 	color: rgb(141,83,245);
 }
 
-#clock, #backlight, #battery, #cpu, #memory, #network, #pulseaudio, #tray, #mode {
-    /* color: rgba(0, 0, 0, 1); */
-    padding: 8 0px;
-    margin: 0;
+#clock, #backlight, #battery, #cpu, #memory, #network, #pulseaudio {
+    padding: 0px;
+    margin: 0px 4px;
 }
 
 #battery icon {
@@ -47,5 +48,4 @@ window#waybar {
     background-color: #f53c3c;
     color: #ffffff;
 }
-
 
