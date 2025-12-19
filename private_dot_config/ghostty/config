@@ -1,0 +1,12 @@
+# ghostty +show-config --default --docs
+# https://ghostty.org/docs/config.
+
+font-family = Iosevka NF
+font-size = 12
+gtk-titlebar = false
+theme = Flexoki Dark
+window-theme = ghostty
+window-width = 73
+window-height = 24
+window-padding-x = 0
+window-padding-y = 0

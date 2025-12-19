@@ -1,0 +1,96 @@
+// https://yalter.github.io/niri/Configuration:-Window-Rules
+
+window-rule {
+    geometry-corner-radius 12
+    clip-to-geometry true
+}
+
+// awww inside the overview backdrop.
+// layer-rule {
+//     match namespace="^awww-daemon$"
+//     place-within-backdrop true
+// }
+
+// Open Flare, Secrets, Tuba with less width
+window-rule {
+    match app-id=r#"^de\.schmidhuberj\.Flare$"#
+    match app-id=r#"^org\.gnome\.World\.Secrets$"#
+    match app-id=r#"^org\.gnome\.Podcasts$"#
+    match app-id=r#"^io\.bassi\.Amberol$"#
+    match app-id=r#"^dev\.geopjr\.Tuba$"#
+    match app-id=r#"^com\.github\.neithern\.g4music$"#
+    match app-id=r#"^io\.github\.alainm23\.planify$"#
+    default-column-width { proportion 0.33333; }
+}
+
+// Calendar
+window-rule {
+    match app-id=r#"^org\.gnome\.Calendar$"#
+    match app-id=r#"^com\.github\.johnfactotum\.Foliate$"#
+    match app-id=r#"^com\.github\.flxzt\.rnote$"#
+    default-column-width { proportion 0.66667; }
+}
+
+// NewsFlash
+window-rule {
+    match app-id=r#"^io\.gitlab\.news_flash\.NewsFlash$"#
+	default-column-width { fixed 710; }
+}
+
+// Nautilus / Files
+window-rule {
+    match app-id=r#"^org\.gnome\.Nautilus$"#
+    // default-column-width { proportion 0.66667; }
+    default-column-width { fixed 727; }
+}
+
+// Gradia
+window-rule {
+    match app-id=r#"^be\.alexandervanhee\.gradia$"#
+    default-column-width { proportion 0.66667; }
+}
+
+// Open Firefox maximized
+/- window-rule {
+    // This app-id regular expression will work for both:
+    // - host Firefox (app-id is "firefox")
+    // - Flatpak Firefox (app-id is "org.mozilla.firefox")
+    match app-id=r#"firefox$"#
+	match app-id=r#"^org\.gimp\.GIMP$"#
+	match app-id=r#"^org\.inkscape\.Inkscape$"#
+    open-maximized true
+	// open-maximized-to-edges true
+}
+
+
+window-rule {
+	match app-id=r#"^io\.lmms\.LMMS$"#
+	open-maximized-to-edges true
+}
+
+// Open the Firefox picture-in-picture player as floating by default.
+window-rule {
+    match app-id=r#"firefox$"# title="^Picture-in-Picture$"
+    open-floating true
+}
+
+// block out Secrets from screen capture.
+// (This example rule is commented out with a "/-" in front.)
+window-rule {
+    match app-id=r#"^org\.gnome\.World\.Secrets$"#
+    block-out-from "screen-capture"
+}
+
+// Open Virtual Midi Piano Keyboard floating
+window-rule {
+    match app-id=r#"^net\.sourceforge\.VMPK$"#
+    open-floating true
+    default-column-width { fixed 1290; }
+}
+
+// Floating
+window-rule {
+	match app-id=r#"^io\.github\.jhxnnat\.nochi\.settings$"#
+	open-floating true
+}
+

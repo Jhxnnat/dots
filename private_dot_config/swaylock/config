@@ -1,0 +1,15 @@
+ignore-empty-password
+
+font=Iosevka NF
+
+color=000000
+line-color=282828
+ring-color=000000
+
+fade-in=0.2
+
+show-keyboard-layout
+
+indicator-thickness=6
+
+# end
