@@ -1,22 +1,9 @@
 Computer configurations files in case of emergency, or os reinstall...
-
-* **Skarr**: main laptop
-
-## Seting up
-
-Arch:
-`sudo pacman -Syu neovim helix fish tmux zed niri kmonad wl-copy`
-
-Fedora:
-`sudo dnf install neovim helix fish tmux zed niri`
+<br/>
+files managed using [chezmoi](https://www.chezmoi.io/install/#one-line-package-install)
 
 * get kmonad: https://github.com/kmonad/kmonad
 * get vim-plug: https://github.com/junegunn/vim-plug
-
-```bash
-chmod +x ./kmonad
-sudo cp ./kmonad /usr/local/bin/kmonad
-```
 
 ### SSH keys
 ```bash
@@ -25,10 +12,15 @@ cat .ssh/id_ecdsa.pub | wl-copy
 ```
 * add ssh key: gitlab, github, codeberg
 
-### symlinks:
-`bash setup.sh`
+### kmonad
 
-### kmonad systemd services:
+```bash
+chmod +x ./kmonad
+sudo cp ./kmonad /usr/local/bin/kmonad
+```
+
+### kmonad systemd service:
+
 ```bash
 sudo mkdir -p /etc/kmonad
 sudo cp ./kmonad/kmonadconf-tdagger.kbd /etc/kmonad/kmonadconf-tdagger.kbd
