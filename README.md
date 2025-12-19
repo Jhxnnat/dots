@@ -1,65 +1,40 @@
 Computer configurations files in case of emergency, or os reinstall...
 
 * **Skarr**: main laptop
-* ???: VPS
 
 ## Seting up
 
-* Dependencies
+Arch:
+`sudo pacman -Syu neovim helix fish tmux zed niri kmonad wl-copy`
 
 Fedora:
-```
-sudo dnf install neovim helix fish tmux
-```
+`sudo dnf install neovim helix fish tmux zed niri`
 
-Arch:
-```
-sudo pacman -Syu neovim helix fish tmux
-```
-
-* get vim-plug: https://github.com/junegunn/vim-plug
 * get kmonad: https://github.com/kmonad/kmonad
+* get vim-plug: https://github.com/junegunn/vim-plug
 
-```
+```bash
 chmod +x ./kmonad
 sudo cp ./kmonad /usr/local/bin/kmonad
 ```
 
-```
+### SSH keys
+```bash
 ssh-keygen
+cat .ssh/id_ecdsa.pub | wl-copy
 ```
+* add ssh key: gitlab, github, codeberg
 
-* add ssh key: gitlab, github
-* clone
+### symlinks:
+`bash setup.sh`
 
-server:
-```
-ssh-copy-id jhx@*****
-```
-
-symlinks:
-
-* check the `link.sh` file
-
-kmonad systemd services:
-
-* external keyboard:
-    * ./kmonad/kmonad_external.service
-    * ./kmonad/kmonadconf-tdagger.kbd
-* laptop built-in:
-    * ./kmonad/kmonad_builtin.service
-    * ./kmonad/kmonad_script_builtin.sh
-    * ./kmonad/kmonadconf-laptop.kbd
-
-```
+### kmonad systemd services:
+```bash
 sudo mkdir -p /etc/kmonad
 sudo cp ./kmonad/kmonadconf-tdagger.kbd /etc/kmonad/kmonadconf-tdagger.kbd
 sudo cp ./kmonad/kmonad_external.service /etc/systemd/user/kmonad_external.service
 sudo cp ./kmonad/kmonad_script_external.sh /etc/kmonad/kmonad_script_external.sh
-```
-
-```
-systemctl daemon-reload
 systemctl enable kmonad_external
 systemctl start kmonad_external
+# systemctl daemon-reload
 ```
