@@ -1,2 +1,2 @@
-# dots
-mirror from https://gitlab.com/Jhxnnat/dots
+Computer configurations files in case of emergency, or os reinstall...
+files managed using [chezmoi](https://www.chezmoi.io/install/#one-line-package-install)
