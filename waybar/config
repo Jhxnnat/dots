@@ -5,7 +5,7 @@
 	// "width": 32,
     "modules-left": ["niri/workspaces"],
     // "modules-center": ["clock"],
-    "modules-right": ["network", "pulseaudio", "battery", "clock"],
+    "modules-right": ["pulseaudio", "network", "battery", "clock"],
 
 	"niri/workspaces": { 
 		"format": "{icon}",
@@ -28,7 +28,7 @@
     },
     "clock": {
  		"tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>",
-        "format": "   {:%e-%m<b> / %H:%M</b>}"
+        "format": "{:%a %d %b  %I:%M %p}"
     },
     "cpu": {
         "format": "{usage:02}",
@@ -59,10 +59,10 @@
             "critical": 20
         },
         "interval": 10,
-        "format": "{capacity:02}",
+        "format": "{icon}",
         "format-charging": "{capacity:02}",
         "format-icons": [" ", " ", " ", " ", " "],
-		"tooltip-format": "{power:0.1f}W"
+		"tooltip-format": "{capacity:02}% {power:0.1f}W"
     },
     "network": {
         // "format-wifi": " {essid} {signaldBm}",
@@ -93,5 +93,8 @@
 	},
 	"custom/sep": {
 		"format": "/"
+	},
+	"custom/search": {
+		"format": " "
 	}
 }

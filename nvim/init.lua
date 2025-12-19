@@ -47,6 +47,8 @@ Plug 'nvim-tree/nvim-web-devicons'
 Plug 'numToStr/FTerm.nvim'
 Plug 'nvim-mini/mini.statusline'
 
+Plug 'vala-lang/vala.vim'
+
 Plug 'neovim/nvim-lspconfig'
 
 vim.call('plug#end')

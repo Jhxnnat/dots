@@ -6,7 +6,7 @@ background = "#000000"
 foreground = "#eaeaea"
 
 [font]
-size = 13
+size = 12
 
 [font.bold]
 family = "Iosevka NF"

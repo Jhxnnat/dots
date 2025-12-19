@@ -5,11 +5,11 @@ window-rule {
     clip-to-geometry true
 }
 
-// Put swaybg inside the overview backdrop.
-layer-rule {
-    match namespace="^wallpaper$"
-    place-within-backdrop false
-}
+// awww inside the overview backdrop.
+// layer-rule {
+//     match namespace="^awww-daemon$"
+//     place-within-backdrop true
+// }
 
 // Open Flare, Secrets, Tuba with less width
 window-rule {
@@ -27,6 +27,7 @@ window-rule {
 window-rule {
     match app-id=r#"^org\.gnome\.Calendar$"#
     match app-id=r#"^com\.github\.johnfactotum\.Foliate$"#
+    match app-id=r#"^com\.github\.flxzt\.rnote$"#
     default-column-width { proportion 0.66667; }
 }
 
@@ -50,14 +51,21 @@ window-rule {
 }
 
 // Open Firefox maximized
-window-rule {
+/- window-rule {
     // This app-id regular expression will work for both:
     // - host Firefox (app-id is "firefox")
     // - Flatpak Firefox (app-id is "org.mozilla.firefox")
     match app-id=r#"firefox$"#
 	match app-id=r#"^org\.gimp\.GIMP$"#
 	match app-id=r#"^org\.inkscape\.Inkscape$"#
-    open-maximized-to-edges true
+    open-maximized true
+	// open-maximized-to-edges true
+}
+
+
+window-rule {
+	match app-id=r#"^io\.lmms\.LMMS$"#
+	open-maximized-to-edges true
 }
 
 // Open the Firefox picture-in-picture player as floating by default.
@@ -75,8 +83,14 @@ window-rule {
 
 // Open Virtual Midi Piano Keyboard floating
 window-rule {
-    match app-id="^net.sourceforge.VMPK$"
+    match app-id=r#"^net\.sourceforge\.VMPK$"#
     open-floating true
     default-column-width { fixed 1290; }
+}
+
+// Floating
+window-rule {
+	match app-id=r#"^io\.github\.jhxnnat\.nochi\.settings$"#
+	open-floating true
 }
 
