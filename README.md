@@ -3,12 +3,19 @@ files managed using [chezmoi](https://www.chezmoi.io/install/#one-line-package-i
 
 ```bash
 # Arch
-sudo pacman -Syu fish helix neovim niri mako fuzzel
+sudo pacman -Syu fish helix neovim zed niri mako fuzzel waybar wl-clipboard
 ```
 
 ```bash
 # Fedora
-sudo dnf install fish helix neovim niri
+sudo dnf install fish helix neovim niri waybar wl-clipboard
+curl -f https://zed.dev/install.sh | sh
+```
+
+```bash
+ssh-keygen
+cat .ssh/id_ecdsa.pub | wl-copy
+# add keys to github/codeberg
 ```
 
 ```bash
