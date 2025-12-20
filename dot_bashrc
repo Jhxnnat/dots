@@ -7,8 +7,8 @@
 
 
 alias ls='ls --color=auto'
-alias ll='ls -l'
-alias la='ls -A'
+alias ll='ls -l --color=auto'
+alias la='ls -A --color=auto'
 alias grep='grep --color=auto'
 alias f='exec fish'
 
@@ -16,15 +16,22 @@ export EDITOR="nvim"
 
 PS1='[\w]\$ '
 
+# Path
 if [ -d "$HOME/.local/bin" ]; then
 	PATH="$HOME/.local/bin:$PATH"
 fi
+
+if [ -d "$HOME/bin" ]; then
+	PATH="$HOME/bin:$PATH"
+fi
+
 
 # Pyenv
 export PYENV_ROOT="$HOME/.pyenv"
 [[ -d $PYENV_ROOT/bin ]] && export PATH="$PYENV_ROOT/bin:$PATH"
 eval "$(pyenv init - bash)"
 eval "$(pyenv virtualenv-init -)"
+
 
 # Cargo
 . "$HOME/.cargo/env"
