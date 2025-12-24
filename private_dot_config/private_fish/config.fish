@@ -1,10 +1,6 @@
 set fish_cursor_insert block
 set -U fish_prompt_pwd_dir_length 0
 
-alias n="nvim"
-alias hx="helix"
-alias fastfetch="fastfetch -l PearOS"
-
 function fish_greeting
 end
 
