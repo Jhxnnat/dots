@@ -132,13 +132,13 @@ layout {
         softness 20
 
         // Spread expands the shadow.
-        spread 6
+        spread 4
 
         // Offset moves the shadow relative to the window.
         offset x=0 y=5
 
         // You can also change the shadow color and opacity.
-        color "rgba(0,0,0,0.8)"
+        color "rgba(0,0,0,0.5)"
     }
 
     // Struts shrink the area occupied by windows, similarly to layer-shell panels.

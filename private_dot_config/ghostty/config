@@ -4,7 +4,7 @@
 font-family = Iosevka NF
 font-size = 12
 gtk-titlebar = false
-theme = Flexoki Dark
+theme = dark:Japanesque,light:Apple System Colors Light
 window-theme = ghostty
 window-width = 73
 window-height = 24

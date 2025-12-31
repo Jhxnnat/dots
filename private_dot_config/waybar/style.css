@@ -1,7 +1,7 @@
 * {
     border: none;
     border-radius: 0;
-    font-family: "Adwaita Mono";
+    font-family: "Inter Display", "Iosevka NF";
     font-size: 13px;
     font-weight: bold;
     min-height: 0;
@@ -9,31 +9,79 @@
 }
 
 window#waybar {
-    background: rgba(0, 0, 0, 1);
-    color: rgba(255, 255, 255, 1);
+    /* background: #95D5DE; */
+    background: transparent;
+	color: white;
 }
 
 #window {
-    color: rgba(255, 255, 255, 1);
+    color: white;
+}
+
+window > box {
+  background: linear-gradient(
+    to bottom,
+    rgba(0, 0, 0, 0.5) 0%,
+    rgba(0, 0, 0, 0.494) 1%,
+    rgba(0, 0, 0, 0.476) 3.7%,
+    rgba(0, 0, 0, 0.448) 8%,
+    rgba(0, 0, 0, 0.412) 13.6%,
+    rgba(0, 0, 0, 0.37) 20.4%,
+    rgba(0, 0, 0, 0.324) 28%,
+    rgba(0, 0, 0, 0.275) 36.3%,
+    rgba(0, 0, 0, 0.225) 45%,
+    rgba(0, 0, 0, 0.176) 54%,
+    rgba(0, 0, 0, 0.13) 63%,
+    rgba(0, 0, 0, 0.088) 71.7%,
+    rgba(0, 0, 0, 0.052) 80%,
+    rgba(0, 0, 0, 0.024) 87.6%,
+    rgba(0, 0, 0, 0.006) 94.4%,
+    rgba(0, 0, 0, 0) 100%
+  );
+  background-clip: border-box;
+}
+
+#workspaces {
+    margin-left: 8px;
 }
 
 #workspaces button {
     padding: 0;
-	margin: 0;
     background: transparent;
-	color: #484848;
+	color: rgb(200,200,200);
+	text-shadow: 1px 1px 3px black;
 }
 
-#workspaces button.focused {
-	color: rgb(141,83,245);
-}
 #workspaces button.active {
-	color: rgb(141,83,245);
+	color: white;
 }
 
-#clock, #backlight, #battery, #cpu, #memory, #network, #pulseaudio {
+#clock, #backlight, #battery, #cpu, #memory,
+#network, #pulseaudio, #wireplumber,
+#custom-notify, #privacy {
     padding: 0px;
-    margin: 0px 4px;
+    margin-left: 8px;
+	margin-right: 8px;
+	text-shadow: 1px 1px 3px black;
+}
+
+#privacy {
+}
+#privacy-item {
+  margin: 2px 0;
+  padding: 0 16px;
+  color: white;
+  border-radius: 100px;
+  border: 1px solid rgba(255, 255, 255, 0.15);
+}
+#privacy-item.screenshare {
+  background: #30c658;
+}
+#privacy-item.audio-in {
+  background: #ffa915;
+}
+#privacy-item.audio-out {
+  background: #1c71d8;
 }
 
 #battery icon {

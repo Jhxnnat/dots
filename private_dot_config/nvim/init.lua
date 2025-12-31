@@ -1,3 +1,53 @@
+vim.pack.add {'https://github.com/neovim/nvim-lspconfig'}
+vim.pack.add {'https://github.com/stevearc/oil.nvim'}
+vim.pack.add {'https://github.com/folke/which-key.nvim'}
+vim.pack.add {'https://github.com/nvim-lua/plenary.nvim'}
+vim.pack.add {'https://github.com/nvim-telescope/telescope.nvim'}
+vim.pack.add {'https://github.com/nvim-tree/nvim-tree.lua'}
+vim.pack.add {'https://github.com/nvim-tree/nvim-web-devicons'}
+vim.pack.add {'https://github.com/akinsho/bufferline.nvim'}
+
+vim.lsp.config('rust-analyzer', {
+	cmd = {'rust-analyzer'},
+	filetypes = {'rust'},
+})
+vim.lsp.enable('rust-analyzer')
+vim.lsp.enable('pyright')
+vim.diagnostic.config({ virtual_text = true })
+
+require("oil").setup({
+	default_file_explorer = true,
+	columns = { "icon", "permissions", "size", "mtime", },
+	watch_for_changes = true,
+	view_options = {
+		show_hidden = true,
+		natural_order = "fast",
+		case_insensitive = false,
+		sort = {
+			{ "type", "asc" },
+			{ "name", "asc" },
+		},
+	}
+})
+
+vim.g.loaded_netrw = 1
+vim.g.loaded_netrwPlugin = 1
+require("nvim-tree").setup({
+	filters = {
+		dotfiles = true,
+	},
+})
+
+require('bufferline').setup{
+	options = {
+		offsets = {
+			{ filetype = "NvimTree", text = "...", highlight = "Directory",
+				separator = true -- use a "true" to enable the default, or set your own character
+			}
+		}
+	}
+}
+
 local options = {
 	laststatus = 3,
     -- ruler = false, --disable extra numbering
@@ -25,62 +75,12 @@ local options = {
     ignorecase = true, --ignore case while searching
     smartcase = true, --but do not ignore if caps are used
     splitkeep = 'screen', --stablizie window open/close
-	signcolumn = "yes:1"
+	signcolumn = "yes:1",
+	confirm = true
 }
 for k, v in pairs(options) do
 	vim.opt[k] = v
 end
-
-local vim = vim
-local Plug = vim.fn['plug#']
-
-vim.call('plug#begin')
-
-Plug 'nvim-lua/plenary.nvim'
-Plug 'nvim-telescope/telescope.nvim'
-Plug 'stevearc/oil.nvim'
-Plug 'norcalli/nvim-colorizer.lua'
-Plug 'windwp/nvim-autopairs'
-Plug 'folke/which-key.nvim'
-Plug 'goolord/alpha-nvim'
-Plug 'nvim-tree/nvim-web-devicons'
-Plug 'numToStr/FTerm.nvim'
-Plug 'nvim-mini/mini.statusline'
-
-Plug 'vala-lang/vala.vim'
-
-Plug 'neovim/nvim-lspconfig'
-
-vim.call('plug#end')
-
-require("colorizer").setup({ "*" })
-require("nvim-autopairs").setup {}
-
-require("oil").setup({
-	default_file_explorer = true,
-	columns = { "icon", "permissions", "size", "mtime", },
-	watch_for_changes = true,
-	view_options = {
-		show_hidden = true,
-		natural_order = "fast",
-		case_insensitive = false,
-		sort = {
-			{ "type", "asc" },
-			{ "name", "asc" },
-		},
-	}
-})
-
-local alpha = require('alpha')
-local dashboard = require("alpha.themes.dashboard")
-dashboard.section.buttons.val = {
-	dashboard.button("d", "  Dev dir", ":cd ~/Dev/<CR> :Oil<CR>"),
-	dashboard.button("n", "󰯂  Notes", ":cd ~/Notes/<CR> :Oil<CR>"),
-	dashboard.button("c", "  Config", ":cd ~/.config/nvim/<CR> :Oil<CR>"),
-}
-dashboard.section.buttons.opts.hl = "Keyword"
-dashboard.opts.opts.noautocmd = true
-alpha.setup(dashboard.opts)
 
 vim.cmd.colorscheme("lunaperche")
 vim.cmd [[
@@ -101,40 +101,28 @@ map("", "<Space>", "<Nop>")
 vim.g.mapleader = " "
 vim.g.maplocalleader = " "
 
-local builtin = require('telescope.builtin')
-map('n', '<leader>f', builtin.find_files, 'Telescope find files')
-map('n', '<leader>sg', builtin.live_grep, 'Telescope live grep')
-map('n', '<leader>sb', builtin.buffers, 'Telescope buffers')
-map('n', '<leader>b', builtin.buffers, 'Telescope buffers')
-map('n', '<leader>sh', builtin.help_tags, 'Telescope help tags')
+local telescope = require('telescope.builtin')
+map('n', '<leader>f', telescope.find_files, 'Telescope find files')
+map('n', '<leader>sg', telescope.live_grep, 'Telescope live grep')
+map('n', '<leader>sb', telescope.buffers, 'Telescope buffers')
+map('n', '<leader>b', telescope.buffers, 'Telescope buffers')
+map('n', '<leader>sh', telescope.help_tags, 'Telescope help tags')
 
 map('n', '<leader>w', '<CMD>w<CR>', 'Save')
 map('n', '<leader>q', '<CMD>q<CR>', 'Exit')
-
-
 map('v', '>', '> gv', 'Indent keep selection')
 map('v', '<', '< gv', 'Indent keep selection')
-
 map('n', '|', ":vsplit<CR>", "split vertical")
 map('n', '-', ":split<CR>", "split horizontal")
-
 map('n', '<leader>e', '<CMD>Oil<CR>', "Oil")
-
+map('n', '<leader>E', '<CMD>NvimTreeToggle<CR>', "Toggle NvimTree")
 map('n', '<A-j>', "<CMD>m .+1<CR>==", "move line down")
 map('n', '<A-k>', "<CMD>m .-2<CR>==", "move line up")
 map("v", '<A-j>', ":m '>+1<CR>gv=gv", "move selection up")
 map("v", '<A-k>', ":m '<-2<CR>gv=gv", "move selection down")
-
 map('n', '<leader>h', '<CMD>noh<CR>', 'disable hightlighting')
-
-map('n', '<A-i>', '<CMD>lua require("FTerm").toggle()<CR>', 'toggle nonsenseTerm')
-map('t', '<A-i>', '<C-\\><C-n><CMD>lua require("FTerm").toggle()<CR>', 'toggle nonsenseTerm')
-
-map('n', '<leader>;', '<CMD>Alpha<CR>', 'Goto Alpha')
-
 map("n", "<leader>x", "<cmd>!chmod +x %<CR>", "make a file executable")
 map("n", "<leader>W", ":set wrap!<CR>", "toggle wrap")
-
 map("n", "<leader>n", function()
 	if vim.wo.relativenumber then
 		vim.wo.relativenumber = false
@@ -143,9 +131,15 @@ map("n", "<leader>n", function()
 		vim.wo.relativenumber = true
 	end
 end, 'toogle relative num')
-
 map("n", "<C-down>", ":resize +2<CR>")
 map("n", "<C-up>", ":resize -2<CR>")
 map("n", "<C-left>", ":vertical resize -2<CR>")
 map("n", "<C-right>", ":vertical resize +2<CR>")
+
+if vim.g.neovide then
+	vim.g.neovide_floating_corner_radius = 1.0
+	vim.api.nvim_set_keymap("n", "<C-+>", ":lua vim.g.neovide_scale_factor = vim.g.neovide_scale_factor + 0.1<CR>", { silent = true })
+	vim.api.nvim_set_keymap("n", "<C-->", ":lua vim.g.neovide_scale_factor = vim.g.neovide_scale_factor - 0.1<CR>", { silent = true })
+	vim.api.nvim_set_keymap("n", "<C-0>", ":lua vim.g.neovide_scale_factor = 1<CR>", { silent = true })
+end
 

@@ -2,11 +2,8 @@
     "layer": "top",
     "position": "top",
     "height": 24,
-	// "width": 32,
     "modules-left": ["niri/workspaces"],
-    // "modules-center": ["clock"],
-    "modules-right": ["pulseaudio", "network", "battery", "clock"],
-
+    "modules-right": ["privacy", "wireplumber", "network", "battery", "custom/notify", "clock"],
 	"niri/workspaces": { 
 		"format": "{icon}",
 		"format-icons": {
@@ -18,17 +15,17 @@
 			"6": " ",
 			"7": " ",
 			"8": " ",
-			"9": " ",
+			"9": " "
 		}
 	},
-
     "tray": {
-        // "icon-size": 21,
         "spacing": 10
     },
     "clock": {
  		"tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>",
-        "format": "{:%a %d %b  %I:%M %p}"
+        "format": "{:%a %d %b, %I:%M %p}",
+		"timezone": "America/Bogota",
+		"locale": "es_CO.UTF-8"
     },
     "cpu": {
         "format": "{usage:02}",
@@ -39,10 +36,7 @@
         "interval": 2
     },
     "temperature": {
-        // "thermal-zone": 2,
-        // "hwmon-path": "/sys/class/hwmon/hwmon2/temp1_input",
         "critical-threshold": 80,
-        // "format-critical": "{temperatureC}°C {icon}",
         "format": "{temperatureC}°C {icon}",
         "format-icons": ["", "", ""]
     },
@@ -59,42 +53,65 @@
             "critical": 20
         },
         "interval": 10,
-        "format": "{icon}",
+        "format": "{capacity:02}% <span size='12pt'>{icon}</span>",
         "format-charging": "{capacity:02}",
         "format-icons": [" ", " ", " ", " ", " "],
 		"tooltip-format": "{capacity:02}% {power:0.1f}W"
     },
     "network": {
-        // "format-wifi": " {essid} {signaldBm}",
-		"tooltip-format": "{essid}",
-        "format-wifi": " ",
-        "format-ethernet": "⇌ ",
-        "format-disconnected": "⚠ ",
+		"tooltip-format": "{essid} {signaldBm}",
+        "format-wifi": "<span size='12pt'> </span>",
+        "format-ethernet": "<span size='12pt'>⇌ </span>",
+        "format-disconnected": "<span size='12pt'>󰖪 </span>",
         "interval": 5
     },
     "wireplumber": {
-        "format": "{volume}%",
+        "format": "{volume}% <span size='12pt'>{icon}</span>",
         "format-muted": "",
+        "format-bluetooth": "{volume}% 󰥰 ",
+        "format-muted": "{volume}%  ",
+        "format-icons": {
+            "headphones": " ",
+            "default": ["", " ", " "]
+        }
         // "on-click": "helvum",
-        "format-icons": ["", " ", " "]
     },
     "pulseaudio": {
-        "format": "{volume}",
-        "format-bluetooth": "{volume}",
-        "format-muted": "--",
+        "format": "{volume}% {icon}",
+        "format-bluetooth": "{volume}% 󰥰 ",
+        "format-muted": " ",
         "format-icons": {
-            "headphones": "",
-            "default": ["", ""]
+            "headphones": " ",
+            "default": ["", " ", " "]
         }
         // "on-click": "pavucontrol"
     },
+	"privacy": {
+		"icon-spacing": 2,
+		"icon-size": 14,
+		"modules": [
+			{
+				"type": "screenshare"
+			},
+			{
+				"type": "audio-in"
+			}
+		]
+	},
 	"backlight": {
-		"format": "{percent}",
+		"format": "{percent}"
 	},
 	"custom/sep": {
 		"format": "/"
 	},
 	"custom/search": {
 		"format": " "
+	},
+	"custom/controlcenter": {
+		"format": "󰨚 "
+	},
+	"custom/notify": {
+		"format": "<span size='12pt'> </span>",
+		"on-click": "swaync-client -t"
 	}
 }
