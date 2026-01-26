@@ -1,7 +1,7 @@
 * {
     border: none;
     border-radius: 0;
-    font-family: "Inter Display", "Iosevka NF";
+    font-family: "Adwaita Sans", "Inter Display", "Iosevka NF";
     font-size: 13px;
     font-weight: bold;
     min-height: 0;
@@ -9,36 +9,12 @@
 }
 
 window#waybar {
-    /* background: #95D5DE; */
-    background: transparent;
+    background: #84C1F9;
 	color: white;
 }
 
 #window {
     color: white;
-}
-
-window > box {
-  background: linear-gradient(
-    to bottom,
-    rgba(0, 0, 0, 0.5) 0%,
-    rgba(0, 0, 0, 0.494) 1%,
-    rgba(0, 0, 0, 0.476) 3.7%,
-    rgba(0, 0, 0, 0.448) 8%,
-    rgba(0, 0, 0, 0.412) 13.6%,
-    rgba(0, 0, 0, 0.37) 20.4%,
-    rgba(0, 0, 0, 0.324) 28%,
-    rgba(0, 0, 0, 0.275) 36.3%,
-    rgba(0, 0, 0, 0.225) 45%,
-    rgba(0, 0, 0, 0.176) 54%,
-    rgba(0, 0, 0, 0.13) 63%,
-    rgba(0, 0, 0, 0.088) 71.7%,
-    rgba(0, 0, 0, 0.052) 80%,
-    rgba(0, 0, 0, 0.024) 87.6%,
-    rgba(0, 0, 0, 0.006) 94.4%,
-    rgba(0, 0, 0, 0) 100%
-  );
-  background-clip: border-box;
 }
 
 #workspaces {
@@ -48,7 +24,7 @@ window > box {
 #workspaces button {
     padding: 0;
     background: transparent;
-	color: rgb(200,200,200);
+	color: white;
 	text-shadow: 1px 1px 3px black;
 }
 

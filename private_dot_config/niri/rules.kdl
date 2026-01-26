@@ -88,9 +88,12 @@ window-rule {
     default-column-width { fixed 1290; }
 }
 
-// Floating
 window-rule {
 	match app-id=r#"^io\.github\.jhxnnat\.nochi\.settings$"#
 	open-floating true
 }
 
+window-rule {
+	match app-id=r#"^me\.jhx\.anotado$"#
+	open-floating true
+}
